@@ -1,0 +1,68 @@
+AppBundle\Entity\Flat:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\FlatRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        address:
+            type: string
+            length: 255
+        floor:
+            type: integer
+        orientation:
+            type: string
+            length: '60'
+            nullable: true
+        area:
+            type: float
+            nullable: true
+        price:
+            type: float
+        rent:
+            type: float
+        charges:
+            type: float
+        energyClass:
+            type: string
+            length: '4'
+            column: energy_class
+        greenHouseGasEmission:
+            type: string
+            length: '4'
+            column: greenhouse_gas_emission
+        furnished:
+            type: boolean
+        numberOfRooms:
+            type: integer
+            column: number_of_rooms
+        hasTv:
+            type: boolean
+            column: has_tv
+        hasWashingMachine:
+            type: boolean
+            column: has_washing_machine
+        isPetsAllowed:
+            type: boolean
+            column: is_pets_allowed
+        hasInternet:
+            type: boolean
+            column: has_internet
+        hasParking:
+            type: boolean
+            column: has_parking
+
+
+    oneToMany:
+        locations:
+            targetEntity: AppBundle\Entity\Renting
+            mappedBy: flat
+            cascade: [ persist, refresh, remove ]
+    lifecycleCallbacks: {  }

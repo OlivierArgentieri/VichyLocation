@@ -1,0 +1,24 @@
+AppBundle\Entity\Renting:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\RentingRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        begginDate:
+            type: date
+            column: beggin_date
+        endDate:
+            type: date
+            column: end_date
+
+    manyToOne:
+        flat:
+            targetEntity: AppBundle\Entity\Flat
+            inversedBy: locations
+            cascade : [persist, refresh]
+    lifecycleCallbacks: {  }
