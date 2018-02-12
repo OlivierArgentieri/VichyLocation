@@ -302,7 +302,7 @@
       <workItem from="1516630242747" duration="3044000" />
       <workItem from="1516755445563" duration="3400000" />
       <workItem from="1518271413478" duration="10668000" />
-      <workItem from="1518437688593" duration="10208000" />
+      <workItem from="1518437688593" duration="10238000" />
     </task>
     <task id="LOCAL-00001" summary="Add connection to BDD and schema">
       <created>1518281856593</created>
@@ -325,11 +325,18 @@
       <option name="project" value="LOCAL" />
       <updated>1518448699604</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add connection to BDD and schema">
+      <created>1518448707570</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1518448707570</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27320000" />
+    <option name="totallyTimeSpent" value="27350000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="368" y="0" width="1532" height="1087" extended-state="0" />
