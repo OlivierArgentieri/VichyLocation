@@ -1,18 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="29b291f2-6ed7-4735-95fc-ce71518068f2" name="Default" comment="Add image path to bdd&#10;&#10;----------------------&#10;fix error in Renting.php&#10;&#10;----------------------&#10;Add files to git">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Image.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Form/UserType.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/ImageRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/Image.orm.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/User.orm.yml" />
+    <list default="true" id="29b291f2-6ed7-4735-95fc-ce71518068f2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Flat.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Flat.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Renting.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Renting.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/Flat.orm.yml" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/config/doctrine/Flat.orm.yml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -317,7 +307,7 @@
       <workItem from="1516630242747" duration="3044000" />
       <workItem from="1516755445563" duration="3400000" />
       <workItem from="1518271413478" duration="10668000" />
-      <workItem from="1518437688593" duration="11768000" />
+      <workItem from="1518437688593" duration="11783000" />
     </task>
     <task id="LOCAL-00001" summary="Add connection to BDD and schema">
       <created>1518281856593</created>
@@ -354,11 +344,18 @@
       <option name="project" value="LOCAL" />
       <updated>1518448754406</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add image path to bdd&#10;&#10;----------------------&#10;fix error in Renting.php&#10;&#10;----------------------&#10;Add files to git">
+      <created>1518450543991</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1518450543991</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28880000" />
+    <option name="totallyTimeSpent" value="28895000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="368" y="0" width="1532" height="1087" extended-state="0" />
