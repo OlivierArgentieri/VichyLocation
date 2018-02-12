@@ -1,0 +1,26 @@
+AppBundle\Entity\Image:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\ImageRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: '100'
+            unique: true
+        path:
+            type: string
+            length: 255
+            unique: true
+
+    manyToOne:
+            flat:
+                targetEntity: AppBundle\Entity\Flat
+                inversedBy: locations
+                cascade : [persist, refresh]
+    lifecycleCallbacks: {  }

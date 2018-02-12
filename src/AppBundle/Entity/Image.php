@@ -3,9 +3,9 @@
 namespace AppBundle\Entity;
 
 /**
- * Renting
+ * Image
  */
-class Renting
+class Image
 {
     /**
      * @var int
@@ -13,19 +13,20 @@ class Renting
     private $id;
 
     /**
-     * @var \DateTime
+     * @var string
      */
-    private $begginDate;
+    private $name;
 
     /**
-     * @var \DateTime
+     * @var string
      */
-    private $endDate;
+    private $path;
 
     /**
      * @var Flat
      */
     private $flat;
+
 
     /**
      * Get id
@@ -38,51 +39,51 @@ class Renting
     }
 
     /**
-     * Set begginDate
+     * Set name
      *
-     * @param \DateTime $begginDate
+     * @param string $name
      *
-     * @return Renting
+     * @return Image
      */
-    public function setBegginDate($begginDate)
+    public function setName($name)
     {
-        $this->begginDate = $begginDate;
+        $this->name = $name;
 
         return $this;
     }
 
     /**
-     * Get begginDate
+     * Get name
      *
-     * @return \DateTime
+     * @return string
      */
-    public function getBegginDate()
+    public function getName()
     {
-        return $this->begginDate;
+        return $this->name;
     }
 
     /**
-     * Set endDate
+     * Set path
      *
-     * @param \DateTime $endDate
+     * @param string $path
      *
-     * @return Renting
+     * @return Image
      */
-    public function setEndDate($endDate)
+    public function setPath($path)
     {
-        $this->endDate = $endDate;
+        $this->path = $path;
 
         return $this;
     }
 
     /**
-     * Get endDate
+     * Get path
      *
-     * @return \DateTime
+     * @return string
      */
-    public function getEndDate()
+    public function getPath()
     {
-        return $this->endDate;
+        return $this->path;
     }
 
     /**
@@ -90,7 +91,7 @@ class Renting
      *
      * @param Flat $flat
      *
-     * @return Renting
+     * @return Image
      */
     public function setFlat($flat)
     {

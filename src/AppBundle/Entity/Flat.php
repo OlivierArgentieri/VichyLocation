@@ -103,6 +103,11 @@ class Flat
      */
     private $locations;
 
+    /**
+     * @var ArrayCollection<Image>
+     */
+    private $images;
+
 
     /**
      * Get id
@@ -544,6 +549,30 @@ class Flat
     public function getRents()
     {
         return $this->locations;
+    }
+
+    /**
+     * Set images
+     *
+     * @param array $images
+     *
+     * @return Flat
+     */
+    public function setImages($images)
+    {
+        $this->images = $images;
+
+        return $this;
+    }
+
+    /**
+     * Get images
+     *
+     * @return ArrayCollection|Image[]
+     */
+    public function getImages()
+    {
+        return $this->images;
     }
 
 }

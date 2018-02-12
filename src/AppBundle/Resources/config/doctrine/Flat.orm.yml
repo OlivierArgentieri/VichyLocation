@@ -65,4 +65,10 @@ AppBundle\Entity\Flat:
             targetEntity: AppBundle\Entity\Renting
             mappedBy: flat
             cascade: [ persist, refresh, remove ]
+
+    oneToMany:
+            locations:
+                targetEntity: AppBundle\Entity\Image
+                mappedBy: flat
+                cascade: [ persist, refresh, remove ]
     lifecycleCallbacks: {  }
