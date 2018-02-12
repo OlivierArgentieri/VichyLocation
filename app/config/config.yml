@@ -75,3 +75,6 @@ fos_user:
   from_email:
     address: "281679@gmail.com"
     sender_name: "FOSUserLocationVichy"
+
+twig:
+  cache: false

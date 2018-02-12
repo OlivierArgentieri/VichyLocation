@@ -25,8 +25,10 @@ class DefaultController extends Controller
     public function adminLoginPageAction(Request $request)
     {
         // replace this example code with whatever you need
-        return $this->render('admin/login.html.twig');
+        return $this->render('default/index.html.twig');
     }
+
+
 
 
 }
