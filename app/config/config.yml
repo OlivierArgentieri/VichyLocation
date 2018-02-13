@@ -68,6 +68,9 @@ swiftmailer:
     password: '%mailer_password%'
     spool: { type: memory }
 
+twig:
+  cache: false
+
 fos_user:
   db_driver: orm
   firewall_name: main
@@ -75,6 +78,3 @@ fos_user:
   from_email:
     address: "281679@gmail.com"
     sender_name: "FOSUserLocationVichy"
-
-twig:
-  cache: false
