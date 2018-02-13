@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Flats list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Floor</th>
+                <th>Orientation</th>
+                <th>Area</th>
+                <th>Price</th>
+                <th>Rent</th>
+                <th>Charges</th>
+                <th>Energyclass</th>
+                <th>Greenhousegasemission</th>
+                <th>Furnished</th>
+                <th>Numberofrooms</th>
+                <th>Hastv</th>
+                <th>Haswashingmachine</th>
+                <th>Ispetsallowed</th>
+                <th>Hasinternet</th>
+                <th>Hasparking</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for flat in flats %}
+            <tr>
+                <td><a href="{{ path('admin-panel_flat_show', { 'id': flat.id }) }}">{{ flat.id }}</a></td>
+                <td>{{ flat.name }}</td>
+                <td>{{ flat.address }}</td>
+                <td>{{ flat.floor }}</td>
+                <td>{{ flat.orientation }}</td>
+                <td>{{ flat.area }}</td>
+                <td>{{ flat.price }}</td>
+                <td>{{ flat.rent }}</td>
+                <td>{{ flat.charges }}</td>
+                <td>{{ flat.energyClass }}</td>
+                <td>{{ flat.greenHouseGasEmission }}</td>
+                <td>{% if flat.furnished %}Yes{% else %}No{% endif %}</td>
+                <td>{{ flat.numberOfRooms }}</td>
+                <td>{% if flat.hasTv %}Yes{% else %}No{% endif %}</td>
+                <td>{% if flat.hasWashingMachine %}Yes{% else %}No{% endif %}</td>
+                <td>{% if flat.isPetsAllowed %}Yes{% else %}No{% endif %}</td>
+                <td>{% if flat.hasInternet %}Yes{% else %}No{% endif %}</td>
+                <td>{% if flat.hasParking %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin-panel_flat_show', { 'id': flat.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin-panel_flat_edit', { 'id': flat.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin-panel_flat_new') }}">Create a new flat</a>
+        </li>
+    </ul>
+{% endblock %}

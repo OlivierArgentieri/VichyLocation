@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Rentings list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Beggindate</th>
+                <th>Enddate</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for renting in rentings %}
+            <tr>
+                <td><a href="{{ path('admin-panel_renting_show', { 'id': renting.id }) }}">{{ renting.id }}</a></td>
+                <td>{% if renting.begginDate %}{{ renting.begginDate|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if renting.endDate %}{{ renting.endDate|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin-panel_renting_show', { 'id': renting.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin-panel_renting_edit', { 'id': renting.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin-panel_renting_new') }}">Create a new renting</a>
+        </li>
+    </ul>
+{% endblock %}

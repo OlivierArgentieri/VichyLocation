@@ -354,7 +354,7 @@ class Flat
      *
      * @return string
      */
-    public function getGreehouseGasEmission()
+    public function getGreenhouseGasEmission()
     {
         return $this->greenHouseGasEmission;
     }
@@ -573,6 +573,10 @@ class Flat
     public function getImages()
     {
         return $this->images;
+    }
+
+    public function __toString(){
+        return $this->name;
     }
 
 }

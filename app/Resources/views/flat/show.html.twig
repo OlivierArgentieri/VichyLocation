@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Flat</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ flat.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ flat.name }}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{ flat.address }}</td>
+            </tr>
+            <tr>
+                <th>Floor</th>
+                <td>{{ flat.floor }}</td>
+            </tr>
+            <tr>
+                <th>Orientation</th>
+                <td>{{ flat.orientation }}</td>
+            </tr>
+            <tr>
+                <th>Area</th>
+                <td>{{ flat.area }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ flat.price }}</td>
+            </tr>
+            <tr>
+                <th>Rent</th>
+                <td>{{ flat.rent }}</td>
+            </tr>
+            <tr>
+                <th>Charges</th>
+                <td>{{ flat.charges }}</td>
+            </tr>
+            <tr>
+                <th>Energyclass</th>
+                <td>{{ flat.energyClass }}</td>
+            </tr>
+            <tr>
+                <th>Greenhousegasemission</th>
+                <td>{{ flat.greenHouseGasEmission }}</td>
+            </tr>
+            <tr>
+                <th>Furnished</th>
+                <td>{% if flat.furnished %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Numberofrooms</th>
+                <td>{{ flat.numberOfRooms }}</td>
+            </tr>
+            <tr>
+                <th>Hastv</th>
+                <td>{% if flat.hasTv %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Haswashingmachine</th>
+                <td>{% if flat.hasWashingMachine %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Ispetsallowed</th>
+                <td>{% if flat.isPetsAllowed %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Hasinternet</th>
+                <td>{% if flat.hasInternet %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Hasparking</th>
+                <td>{% if flat.hasParking %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin-panel_flat_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('admin-panel_flat_edit', { 'id': flat.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
