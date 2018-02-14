@@ -20,12 +20,12 @@ class DefaultController extends Controller
     }
 
     /**
-    * @Route("/admin/login", name="adminloginpage")
+    * @Route("/admin-panel/", name="adminindex")
     */
-    public function adminLoginPageAction(Request $request)
+    public function adminIndexPageAction(Request $request)
     {
         // replace this example code with whatever you need
-        return $this->render('default/index.html.twig');
+        return $this->render('admin/index.html.twig');
     }
 
 

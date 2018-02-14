@@ -1,6 +1,6 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_admin.html.twig' %}
 
-{% block body %}
+{% block page_wrapper %}
     <h1>Renting</h1>
 
     <table>
@@ -33,4 +33,4 @@
             {{ form_end(delete_form) }}
         </li>
     </ul>
-{% endblock %}
+{% endblock page_wrapper%}
