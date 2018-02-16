@@ -1,6 +1,6 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_admin.html.twig' %}
 
-{% block body %}
+{% block page_wrapper %}
     <h1>Images list</h1>
 
     <table>
@@ -38,4 +38,4 @@
             <a href="{{ path('admin-panel_image_new') }}">Create a new image</a>
         </li>
     </ul>
-{% endblock %}
+{% endblock page_wrapper %}

@@ -14,7 +14,9 @@ class FlatType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('name')->add('address')->add('floor')->add('orientation')->add('area')->add('price')->add('rent')->add('charges')->add('energyClass')->add('greenHouseGasEmission')->add('furnished')->add('numberOfRooms')->add('hasTv')->add('hasWashingMachine')->add('isPetsAllowed')->add('hasInternet')->add('hasParking');
-    }/**
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)

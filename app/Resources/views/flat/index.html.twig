@@ -1,6 +1,6 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_admin.html.twig' %}
 
-{% block body %}
+{% block page_wrapper %}
     <h1>Flats list</h1>
 
     <table>
@@ -68,4 +68,4 @@
             <a href="{{ path('admin-panel_flat_new') }}">Create a new flat</a>
         </li>
     </ul>
-{% endblock %}
+{% endblock page_wrapper %}

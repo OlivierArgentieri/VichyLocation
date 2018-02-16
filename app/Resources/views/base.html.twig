@@ -9,7 +9,11 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    {% block stylesheets %}{% endblock %}
+    {% block base_stylesheets %}
+        {% block stylesheets %}
+        {% endblock %}
+    {% endblock base_stylesheets %}
+
 
     <title>{% block title %}Something Clever Here!{% endblock %}</title>
 

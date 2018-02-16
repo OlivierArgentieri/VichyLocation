@@ -23,7 +23,6 @@ class RentingController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-
         $rentings = $em->getRepository('AppBundle:Renting')->findAll();
 
         return $this->render('renting/index.html.twig', array(
