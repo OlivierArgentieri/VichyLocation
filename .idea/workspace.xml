@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="29b291f2-6ed7-4735-95fc-ce71518068f2" name="Default" comment="">
+    <list default="true" id="29b291f2-6ed7-4735-95fc-ce71518068f2" name="Default" comment="Add Action Item menu">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/admin/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/admin/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base_admin.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base_admin.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -503,7 +501,7 @@
       <workItem from="1518548958195" duration="10282000" />
       <workItem from="1518596042633" duration="8174000" />
       <workItem from="1518626033396" duration="23226000" />
-      <workItem from="1518822450085" duration="11835000" />
+      <workItem from="1518822450085" duration="11886000" />
     </task>
     <task id="LOCAL-00001" summary="Add connection to BDD and schema">
       <created>1518281856593</created>
@@ -603,11 +601,18 @@
       <option name="project" value="LOCAL" />
       <updated>1518839380252</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Add Action Item menu">
+      <created>1518839965576</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1518839965576</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108723000" />
+    <option name="totallyTimeSpent" value="108774000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -659,7 +664,8 @@
     <MESSAGE value="Add : SB Admin 2&#10;----------------&#10;With login" />
     <MESSAGE value="path of /register OK&#10;----------------&#10;Interface of User CRUD OK" />
     <MESSAGE value="Sb-admin 2 &gt; Sb-Admin 4 OK" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sb-admin 2 &gt; Sb-Admin 4 OK" />
+    <MESSAGE value="Add Action Item menu" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Action Item menu" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
