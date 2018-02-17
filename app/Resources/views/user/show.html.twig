@@ -52,7 +52,10 @@
                 <div class="modal-body">Voulez vous vraiment supprimer cet utilisateurs ? </div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
-                    <a class="btn btn-primary" href="{{ path('admin-panel_user_delete', { 'id': user.id }) }}">Oui</a>
+                    {{ form_start(delete_form) }}
+                    <input class="btn btn-primary" type="submit" value="Oui">
+                    {{ form_end(delete_form) }}
+
                 </div>
             </div>
         </div>
@@ -65,13 +68,3 @@
 
     </ul>
 {% endblock page_wrapper %}
-
-     {% block javascripts %}
-
-         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
-         <script src="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css"></script>
-         <script> $(document).ready(function() {
-                 $('#example').DataTable();
-             } );
-         </script>
-     {% endblock javascripts %}

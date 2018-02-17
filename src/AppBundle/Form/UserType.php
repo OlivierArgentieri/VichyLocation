@@ -22,11 +22,11 @@ class UserType extends AbstractType
             ->add('plainPassword', LegacyFormHelper::getType('Symfony\Component\Form\Extension\Core\Type\RepeatedType'), array(
                 'type' => LegacyFormHelper::getType('Symfony\Component\Form\Extension\Core\Type\PasswordType'),
                 'options' => array('translation_domain' => 'FOSUserBundle'),
-                'first_options' => array('label' => 'form.password'),
-                'second_options' => array('label' => 'form.password_confirmation'),
+                'first_options' => array('label' => 'Mot de passe'),
+                'second_options' => array('label' => 'Confirmation'),
                 'invalid_message' => 'fos_user.password.mismatch',
             ))
-            ->add('enabled', ChoiceType::class, array( 'choices'  => array( 'Yes' => true, 'No' => false,)));
+            ->add('enabled', ChoiceType::class, array( 'choices'  => array( 'Oui' => true, 'Non' => false,)));
         ;
     }
     /**
