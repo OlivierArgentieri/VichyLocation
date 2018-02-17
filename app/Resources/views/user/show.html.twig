@@ -29,21 +29,38 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('admin-panel_user_edit', { 'id': user.id }) }}">Edit</a>
+                            <a href="{{ path('admin-panel_user_edit', { 'id': user.id }) }}" class="btn btn-warning"><i class="fa fa-edit"></i>Modifier</a>
+                            <a href="" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"> <i class="fa fa-trash"></i>Supprimer</a>
                         </li>
-                        <li>
-                            <a href="{{ path('admin-panel_user_delete', { 'id': user.id }) }}">Delete</a>
-                        </li>
-
                     </ul>
                 </td>
             </tr>
         </tbody>
     </table>
 
+
+    <!-- Delete Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Voulez vous vraiment supprimer cet utilisateurs ? </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+                    <a class="btn btn-primary" href="{{ path('admin-panel_user_delete', { 'id': user.id }) }}">Oui</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <ul>
         <li>
-            <a href="{{ path('admin-panel_user_index') }}">Back to the list</a>
+            <a href="{{ path('admin-panel_user_index') }}" class="btn btn-dark"><i class="fa fa-backward"></i> Retour vers la liste </a>
         </li>
 
     </ul>
