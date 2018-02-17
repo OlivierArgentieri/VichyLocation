@@ -1,51 +1,53 @@
 {% extends 'base_admin.html.twig' %}
 
+{% block stylesheets %}
+     <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css"/>
+
+    {% endblock %}
+
 {% block page_wrapper %}
     <h1>Users list</h1>
-
-    <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
-        <thead>
-        <tr>
-            <th>Id</th>
-            <th>UserName</th>
-            <th>Mail</th>
-            <th>Action</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for user in users %}
-            <tr>
-                <td><a href="{{ path('admin-panel_flat_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
-                <td><a href="{{ path('admin-panel_flat_show', { 'id': user.id }) }}">{{ user.username }}</a></td>
-                <td>{{ user.email }}</td>
-
-                <td>
-                    <ul>
-                        <li>
-                            <a class="btn btn-success" href="{{ path('admin-panel_user_show', { 'id': user.id }) }}"><i class="fa fa-eye"></i>show</a>
-                            <a class="btn btn-warning" href="{{ path('admin-panel_user_edit', { 'id': user.id }) }}"><i class="fa fa-edit"></i>Modifier</a>
-
-                            <a class="btn btn-danger" href="{{ path('admin-panel_user_delete', { 'id': user.id }) }}"><i class="fa fa-trash"></i>Supprimer</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-    <ul>
-        <li>
-            <a class="btn btn-success" href="{{ path('admin-panel_user_new') }}"><i class="fa fa-user"></i>Create a new user</a>
-        </li>
-    </ul>
+<div class="card-mb-3">
+    <div class="card-header">
+        <i class="fa fa-table"> </i> Utilisateurs
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table id="user" class="table table-bordered dataTable" cellspacing="0" width="100%">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Username</th>
+                        <th>Mail</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>
+                            <a class="btn btn-success" href="{{ path('admin-panel_user_show', { 'id': user.id }) }}"><i class="fa fa-eye"></i> show</a>
+                            <a class="btn btn-warning" href="{{ path('admin-panel_user_edit', { 'id': user.id }) }}"><i class="fa fa-edit"></i> Modifier</a>
+                            <a class="btn btn-danger" href="{{ path('admin-panel_user_delete', { 'id': user.id }) }}"><i class="fa fa-trash"></i> Supprimer</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+       </div>
+    </div>
+</div>
+            <a class="btn btn-success" href="{{ path('admin-panel_user_new') }}"><i class="fa fa-user"></i> Créé un nouvel utilisateur</a>
 
 {% endblock page_wrapper %}
         {% block javascripts %}
+            <script src="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css"></script>
 
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
-        <script src="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css"></script>
-        <script> $(document).ready(function() {
-                $('#example').DataTable();
+            <script> $(document).ready(function() {
+                $('#user').DataTable( );
             } );
-        </script>
+            </script>
         {% endblock javascripts %}

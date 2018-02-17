@@ -26,7 +26,7 @@ class UserType extends AbstractType
                 'second_options' => array('label' => 'Confirmation'),
                 'invalid_message' => 'fos_user.password.mismatch',
             ))
-            ->add('enabled', ChoiceType::class, array( 'choices'  => array( 'Oui' => true, 'Non' => false,)));
+            ->add('enabled', ChoiceType::class, array( 'choices'  => array( 'Oui' => true, 'Non' => false)));
         ;
     }
     /**
