@@ -21,7 +21,7 @@
                     <td>{{ user.username }}</td>
                     <td>{{ user.email }}</td>
                     <td>
-                        {% if user.enabled == 1%}
+                        {% if user.enabled %}
                             <h6>Oui</h6>
                         {%else %}
                             <h6>Non</h6>
@@ -56,7 +56,6 @@
                         {{ form_start(delete_form) }}
                         <input class="btn btn-primary" type="submit" value="Oui">
                         {{ form_end(delete_form) }}
-
                     </div>
                 </div>
             </div>

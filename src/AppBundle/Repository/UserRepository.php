@@ -10,4 +10,15 @@ namespace AppBundle\Repository;
  */
 class UserRepository extends \Doctrine\ORM\EntityRepository
 {
+
+    public function isExist($user)
+    {
+        $em = $this->getEntityManager();
+        $dql = $em->createQueryBuilder();
+        $dql->select('p');
+        $dql->from('AppBundle.User', 'p');
+        $dql->where($dql->expr()->eq('p', $user));
+        return $dql;
+    }
+
 }
