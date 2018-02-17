@@ -22,13 +22,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('admin-panel_user_show', { 'id': user.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('admin-panel_user_edit', { 'id': user.id }) }}">edit</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('admin-panel_user_delete', { 'id': user.id }) }}">Delete</a>
+                            <a class="btn btn-success" href="{{ path('admin-panel_user_show', { 'id': user.id }) }}"><i class="fa fa-eye"></i>show</a>
+                            <a class="btn btn-warning" href="{{ path('admin-panel_user_edit', { 'id': user.id }) }}"><i class="fa fa-edit"></i>Modifier</a>
+
+                            <a class="btn btn-danger" href="{{ path('admin-panel_user_delete', { 'id': user.id }) }}"><i class="fa fa-trash"></i>Supprimer</a>
                         </li>
                     </ul>
                 </td>
@@ -38,9 +35,10 @@
     </table>
     <ul>
         <li>
-            <a href="{{ path('admin-panel_user_new') }}">Create a new user</a>
+            <a class="btn btn-success" href="{{ path('admin-panel_user_new') }}"><i class="fa fa-user"></i>Create a new user</a>
         </li>
     </ul>
+
 {% endblock page_wrapper %}
         {% block javascripts %}
 
