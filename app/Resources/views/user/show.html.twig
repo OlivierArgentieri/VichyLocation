@@ -1,13 +1,42 @@
 {% extends 'base_admin.html.twig' %}
 
 {% block page_wrapper %}
-    <h1>User</h1>
-
-    <table>
+    <h1> </h1>
+    <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>UserName</th>
+            <th>Mail</th>
+            <th>Activer</th>
+            <th>Roles</th>
+            <th>Action</th>
+        </tr>
+        </thead>
         <tbody>
             <tr>
-                <th>Id</th>
                 <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.enabled }}</td>
+                <td>
+                    <ul>
+                        {% for role in user.roles %}
+                            <li> {{ role }} </li>
+                        {% endfor %}
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('admin-panel_user_edit', { 'id': user.id }) }}">Edit</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('admin-panel_user_delete', { 'id': user.id }) }}">Delete</a>
+                        </li>
+
+                    </ul>
+                </td>
             </tr>
         </tbody>
     </table>
@@ -16,14 +45,16 @@
         <li>
             <a href="{{ path('admin-panel_user_index') }}">Back to the list</a>
         </li>
-        <li>
-            <a href="{{ path('admin-panel_user_edit', { 'id': user.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
+
     </ul>
 {% endblock page_wrapper %}
 
+     {% block javascripts %}
+
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+         <script src="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css"></script>
+         <script> $(document).ready(function() {
+                 $('#example').DataTable();
+             } );
+         </script>
+     {% endblock javascripts %}
