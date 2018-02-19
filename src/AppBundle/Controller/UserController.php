@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\User;
+use AppBundle\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
@@ -42,6 +43,14 @@ class UserController extends Controller
         $user = new User();
         $form = $this->createForm('AppBundle\Form\UserType', $user);
         $form->handleRequest($request);
+
+        /**
+         *
+         * @var UserRepository
+         */
+       $repo = $this->getDoctrine()->getRepository(UserRepository::class);
+        var_dump($repo->isExist($user));
+
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
