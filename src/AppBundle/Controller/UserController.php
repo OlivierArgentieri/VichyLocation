@@ -46,13 +46,15 @@ class UserController extends Controller
 
         /**
          *
-         * @var UserRepository
+         * @var $repo UserRepository
          */
-       $repo = $this->getDoctrine()->getRepository(UserRepository::class);
-        var_dump($repo->isExist($user));
+        $repo = $this->getDoctrine()->getRepository(User::class);
 
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid())
+        {
+
+            //var_dump($repo->isExist($user));
             $em = $this->getDoctrine()->getManager();
             $em->persist($user);
             $em->flush();
