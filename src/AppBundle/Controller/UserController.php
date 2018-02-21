@@ -6,7 +6,9 @@ use AppBundle\Entity\User;
 use AppBundle\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Form\FormError;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * User controller.
@@ -53,13 +55,16 @@ class UserController extends Controller
 
         if ($form->isSubmitted() && $form->isValid())
         {
+            var_dump($repo->isExist($user));
+            if($repo->isExist($user) === null)
+            {
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($user);
+                $em->flush();
+                return $this->redirectToRoute('admin-panel_user_show', array('id' => $user->getId()));
+            }
 
-            //var_dump($repo->isExist($user));
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($user);
-            $em->flush();
-
-            return $this->redirectToRoute('admin-panel_user_show', array('id' => $user->getId()));
+           $form->addError(new FormError("Utilisateur déja existant"));
         }
 
         return $this->render('user/new.html.twig', array(

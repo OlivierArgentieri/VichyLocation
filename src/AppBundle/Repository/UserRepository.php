@@ -2,6 +2,7 @@
 
 namespace AppBundle\Repository;
 
+use AppBundle\Entity\User;
 use Doctrine\ORM\EntityRepository;
 
 
@@ -19,13 +20,31 @@ class UserRepository extends EntityRepository
      * @param $user
      * @return int
      */
-    public function isExist($user)
-    {
+    public function isExist(User $user)
+    { /*
         $em = $this->getEntityManager();
         $dql = $em->createQueryBuilder();
-        $dql->select('count(p)');
-        $dql->from('AppBundle.User', 'p');
-        $dql->where($dql->expr()->eq('p', $user));
-        return $dql->getQuery()->execute();
+        $dql->select('p');
+        $dql->from('AppBundle\Entity\User', 'p');
+       $dql->where($dql->expr()->eq('p.username', $user));
+        return $dql->getQuery()->getFirstResult();
+
+*/
+
+
+
+
+
+      //  $em = $this->getEntityManager();
+        $dql = $this->_em->createQuery('
+            SELECT u.username
+            FROM AppBundle:User u
+            WHERE u.username LIKE :username
+        ')
+            ->setMaxResults(1)
+            ->setParameter('username', $user->getUSername());
+
+        $result = $dql->getOneOrNullResult();
+        return $result;
     }
 }

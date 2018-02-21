@@ -6,12 +6,8 @@
             <h1>User creation</h1>
 
             {{ form_start(form) }}
-                {{ form_errors(form) }}
-            <div>
-                {{ form_errors(form) }}
-            </div>
             {% for error in form.vars.errors.form.getErrors(true) %}
-                <li><div class="alert-danger">{{ error.message}}</div></li>
+                <div class="alert-danger"><i class="fa fa-exclamation-triangle"></i> {{ error.message}}</div>
             {% endfor %}
         <table id="AddUser" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
@@ -32,13 +28,8 @@
                 <td>{{ form_widget(form.plainPassword.second) }}</td>
                 <td>{{ form_widget(form.enabled) }}</td>
                 <td>
-                    <ul>
-                        <li class="nav-item">
-                            {{ form_widget(form) }}
-                            <input type="submit" class="btn btn-success " value="Ajouter" />
-
-                        </li>
-                    </ul>
+                    {{ form_rest(form) }}
+                    <input type="submit" class="btn btn-success " value="Ajouter" />
                 </td>
             </tr>
             </tbody>
