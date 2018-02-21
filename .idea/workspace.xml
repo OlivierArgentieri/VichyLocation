@@ -7,6 +7,7 @@
   <component name="ChangeListManager">
     <list default="true" id="29b291f2-6ed7-4735-95fc-ce71518068f2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/user/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/user/new.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,11 +45,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="new.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/user/new.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="30" column="22" lean-forward="false" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+            <state relative-caret-position="646">
+              <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -57,8 +58,8 @@
       <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/user/show.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1173">
-              <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+            <state relative-caret-position="594">
+              <caret line="67" column="10" lean-forward="false" selection-start-line="63" selection-start-column="4" selection-end-line="67" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -74,16 +75,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserRepository.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserRepository.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="526">
+              <caret line="33" column="48" lean-forward="false" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
               <folding>
                 <element signature="e#40#66#0#PHP" expanded="true" />
-                <marker date="1519232509583" expanded="true" signature="481:576" ph="SELECT team.... AppBundle" />
-                <marker date="1519232509583" expanded="true" signature="481:611" ph="SELECT u.use... AppBundle" />
+                <marker date="1519232685201" expanded="true" signature="481:576" ph="SELECT team.... AppBundle" />
+                <marker date="1519232685201" expanded="true" signature="481:611" ph="SELECT u.use... AppBundle" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/renting/show.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1614">
+              <caret line="188" column="13" lean-forward="false" selection-start-line="188" selection-start-column="13" selection-end-line="188" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -103,16 +114,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="27" lean-forward="false" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -202,8 +203,8 @@
         <option value="$PROJECT_DIR$/app/Resources/views/user/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/base_admin.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/UserController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/user/new.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/user/new.html.twig" />
       </list>
     </option>
   </component>
@@ -494,19 +495,19 @@
     <property name="nodejs_interpreter_path" value="D:/Programme/nodeJs/node" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\wamp\wamp64\www\VichyLocation\web\vendor\datatables\css" />
-      <recent name="D:\wamp\wamp64\www\VichyLocation\web\vendor\datatables" />
-      <recent name="D:\wamp\wamp64\www\VichyLocation\app\Resources\views" />
-      <recent name="D:\wamp\wamp64\www\VichyLocation\app\Resources\views\admin" />
-      <recent name="D:\wamp\wamp64\www\VichyLocation\web\js\flot-data" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\wamp\wamp64\www\VichyLocation\web\vendor\bootstrap\css\bootstrap3" />
       <recent name="D:\wamp\wamp64\www\VichyLocation\web\vendor\bootstrap" />
       <recent name="D:\wamp\wamp64\www\VichyLocation\web\vendor" />
       <recent name="D:\wamp\wamp64\www\VichyLocation\app\Resources\views\admin" />
       <recent name="D:\wamp\wamp64\www\VichyLocation\web\css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\wamp\wamp64\www\VichyLocation\web\vendor\datatables\css" />
+      <recent name="D:\wamp\wamp64\www\VichyLocation\web\vendor\datatables" />
+      <recent name="D:\wamp\wamp64\www\VichyLocation\app\Resources\views" />
+      <recent name="D:\wamp\wamp64\www\VichyLocation\app\Resources\views\admin" />
+      <recent name="D:\wamp\wamp64\www\VichyLocation\web\js\flot-data" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -548,7 +549,7 @@
       <workItem from="1519038602153" duration="4218000" />
       <workItem from="1519062074580" duration="3021000" />
       <workItem from="1519200527711" duration="4870000" />
-      <workItem from="1519231291884" duration="621000" />
+      <workItem from="1519231291884" duration="1591000" />
     </task>
     <task id="LOCAL-00001" summary="Add connection to BDD and schema">
       <created>1518281856593</created>
@@ -732,11 +733,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519205383371</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="&#10;Add : IsExist in repository OK (test username + mail)&#10;View : new : user updated without comment...">
+      <created>1519232526791</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1519232526791</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142236000" />
+    <option name="totallyTimeSpent" value="143206000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -749,9 +757,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="62" y="-8" width="1866" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18161683" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18161683" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -818,7 +825,8 @@
     <MESSAGE value="&#10;Add : IsExist in repository 1/2 again" />
     <MESSAGE value="&#10;Add : IsExist in repository OK&#10;View : new : user updated" />
     <MESSAGE value="&#10;Add : IsExist in repository OK (test username + mail)&#10;View : new : user updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="&#10;Add : IsExist in repository OK (test username + mail)&#10;View : new : user updated" />
+    <MESSAGE value="&#10;Add : IsExist in repository OK (test username + mail)&#10;View : new : user updated without comment..." />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;Add : IsExist in repository OK (test username + mail)&#10;View : new : user updated without comment..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -960,13 +968,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/renting/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="163" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Security/login_content.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="436">
@@ -1094,6 +1095,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1177,31 +1179,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/user/new.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="22" lean-forward="false" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+        <state relative-caret-position="526">
+          <caret line="33" column="48" lean-forward="false" selection-start-line="33" selection-start-column="48" selection-end-line="33" selection-end-column="48" />
+          <folding>
+            <element signature="e#40#66#0#PHP" expanded="true" />
+            <marker date="1519232685201" expanded="true" signature="481:576" ph="SELECT team.... AppBundle" />
+            <marker date="1519232685201" expanded="true" signature="481:611" ph="SELECT u.use... AppBundle" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/renting/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1614">
+          <caret line="188" column="13" lean-forward="false" selection-start-line="188" selection-start-column="13" selection-end-line="188" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/user/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1173">
-          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+        <state relative-caret-position="594">
+          <caret line="67" column="10" lean-forward="false" selection-start-line="63" selection-start-column="4" selection-end-line="67" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/user/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="23" column="5" lean-forward="false" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding>
-            <element signature="e#40#66#0#PHP" expanded="true" />
-            <marker date="1519232509583" expanded="true" signature="481:576" ph="SELECT team.... AppBundle" />
-            <marker date="1519232509583" expanded="true" signature="481:611" ph="SELECT u.use... AppBundle" />
-          </folding>
+        <state relative-caret-position="646">
+          <caret line="38" column="0" lean-forward="true" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

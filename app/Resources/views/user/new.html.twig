@@ -37,12 +37,11 @@
 
             {{ form_end(form) }}
 
-
-            <ul>
-                <li class="nav-item">
-                    <a href="{{ path('admin-panel_user_index') }}">Back to the list</a>
-                </li>
-            </ul>
+        <div class="row">
+            <div class="col-md-12 text-right">
+                <a href="{{ path('admin-panel_user_index') }}" class="btn btn-dark"><i class="fa fa-backward"></i> Retour vers la liste </a>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock page_wrapper %}
