@@ -40,9 +40,13 @@ class UserRepository extends EntityRepository
             SELECT u.username
             FROM AppBundle:User u
             WHERE u.username LIKE :username
+            OR u.email LIKE :email
         ')
             ->setMaxResults(1)
-            ->setParameter('username', $user->getUSername());
+            ->setParameter('username', $user->getUSername())
+            ->setParameter('email', $user->getEmail());
+
+
 
         $result = $dql->getOneOrNullResult();
         return $result;
