@@ -21,20 +21,7 @@ class UserRepository extends EntityRepository
      * @return int
      */
     public function isExist(User $user)
-    { /*
-        $em = $this->getEntityManager();
-        $dql = $em->createQueryBuilder();
-        $dql->select('p');
-        $dql->from('AppBundle\Entity\User', 'p');
-       $dql->where($dql->expr()->eq('p.username', $user));
-        return $dql->getQuery()->getFirstResult();
-
-*/
-
-
-
-
-
+    {
       //  $em = $this->getEntityManager();
         $dql = $this->_em->createQuery('
             SELECT u.username
