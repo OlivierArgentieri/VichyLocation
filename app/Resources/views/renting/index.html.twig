@@ -3,39 +3,47 @@
 {% block page_wrapper %}
     <h1>Rentings list</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Beggindate</th>
-                <th>Enddate</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for renting in rentings %}
-            <tr>
-                <td><a href="{{ path('admin-panel_renting_show', { 'id': renting.id }) }}">{{ renting.id }}</a></td>
-                <td>{% if renting.begginDate %}{{ renting.begginDate|date('Y-m-d') }}{% endif %}</td>
-                <td>{% if renting.endDate %}{{ renting.endDate|date('Y-m-d') }}{% endif %}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('admin-panel_renting_show', { 'id': renting.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('admin-panel_renting_edit', { 'id': renting.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="card-mb-3">
+        <div class="card-header">
+            <i class="fa fa-table"> </i> Locations
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="user" class="table table-bordered dataTable" cellspacing="0" width="100%">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Beggindate</th>
+                        <th>Enddate</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for renting in rentings %}
+                        <tr>
+                            <td>{{ renting.id }}</td>
+                            <td>{{ renting.begginDate|date('d-m-Y') }}</td>
+                            <td>{{ renting.endDate|date('d-m-Y') }}</td>
+                            <td>
+                                <a class="btn btn-success" href="{{ path('admin-panel_renting_show', { 'id': renting.id }) }}"><i class="fa fa-eye"></i> show</a>
+                                <a class="btn btn-warning" href="{{ path('admin-panel_renting_edit', { 'id': renting.id }) }}"><i class="fa fa-edit"></i> Modifier</a>
+                                <a class="btn btn-danger" href="{{ path('admin-panel_renting_delete', { 'id': renting.id }) }}"><i class="fa fa-trash"></i> Supprimer</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <a class="btn btn-success" href="{{ path('admin-panel_renting_new') }}"><i class="fa fa-user"></i> Créé une nouvelle locations</a>
 
-    <ul>
-        <li>
-            <a href="{{ path('admin-panel_renting_new') }}">Create a new renting</a>
-        </li>
-    </ul>
-{% endblock page_wrapper%}
+{% endblock page_wrapper %}
+        {% block javascripts %}
+            <script src="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css"></script>
+
+            <script> $(document).ready(function() {
+                    $('#user').DataTable(  );
+                } );
+            </script>
+        {% endblock javascripts %}

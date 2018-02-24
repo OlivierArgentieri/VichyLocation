@@ -5,8 +5,10 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Renting;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
-
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Form\FormError;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
 /**
  * Renting controller.
  *
@@ -42,12 +44,28 @@ class RentingController extends Controller
         $form = $this->createForm('AppBundle\Form\RentingType', $renting);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($renting);
-            $em->flush();
 
-            return $this->redirectToRoute('admin-panel_renting_show', array('id' => $renting->getId()));
+
+        if ($form->isSubmitted() && $form->isValid()) {
+
+
+
+            echo '<script>';
+            echo 'console.log('. json_encode($renting->getBegginDate()->format('Y-m-d')) .')';
+            echo '</script>';
+            echo '<script>';
+            echo 'console.log('. json_encode($renting->getEndDate()->format('Y-m-d')) .')';
+            echo '</script>';
+
+            if(strtotime($renting->getEndDate()->format('Y-m-d')) > strtotime($renting->getBegginDate()->format('Y-m-d'))) {
+                $em = $this->getDoctrine()->getManager();
+
+                $em->persist($renting);
+                $em->flush();
+                return $this->redirectToRoute('admin-panel_renting_index', array('id' => $renting->getId()));
+            }
+
+            $form->addError(new FormError("Erreur cohérence de date"));
         }
 
         return $this->render('renting/new.html.twig', array(

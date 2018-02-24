@@ -2,22 +2,46 @@
 
 {% block page_wrapper %}
     <h1>User edit</h1>
+    <div class="col-md-12">
 
-    {{ form_start(edit_form) }}
-    {{ form_widget(edit_form) }}
-    <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
+        {{ form_start(edit_form) }}
+        {% for error in edit_form.vars.errors.form.getErrors(true) %}
+            <div class="alert-danger"><i class="fa fa-exclamation-triangle"></i> {{ error.message}}</div>
+        {% endfor %}
+        <table id="AddUser" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            <thead>
+            <tr>
+                <th>Email</th>
+                <th>Username</th>
+                <th>Password</th>
+                <th>Confirmation Password</th>
+                <th>Activer</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{ form_widget(edit_form.email) }}</td>
+                <td>{{ form_widget(edit_form.username) }}</td>
+                <td>{{ form_widget(edit_form.plainPassword.first) }}</td>
+                <td>{{ form_widget(edit_form.plainPassword.second) }}</td>
+                <td>{{ form_widget(edit_form.enabled) }}</td>
+                <td>
+                    {{ form_rest(edit_form) }}
+                    <input type="submit" class="btn btn-success " value="Ajouter" />
+                </td>
+            </tr>
+            </tbody>
+        </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('admin-panel_user_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-            <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+        {{ form_end(edit_form) }}
+
+        <div class="row">
+            <div class="col-md-12 text-right">
+                <a href="{{ path('admin-panel_user_index') }}" class="btn btn-dark"><i class="fa fa-backward"></i> Retour vers la liste </a>
+            </div>
+        </div>
+    </div>
 
 
     {#

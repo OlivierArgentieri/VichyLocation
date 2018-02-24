@@ -5,7 +5,8 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 class RentingType extends AbstractType
 {
     /**
@@ -13,7 +14,10 @@ class RentingType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('begginDate')->add('endDate')->add('flat');
+        $builder
+            ->add('begginDate', DateType::class, array('widget' => 'single_text', 'html5' => false, 'attr' => ['class' => 'datepicker']))
+            ->add('endDate', DateType::class, array('widget' => 'single_text', 'html5' => false, 'attr' => ['class' => 'datepicker']))
+            ->add('flat');
     }/**
      * {@inheritdoc}
      */
