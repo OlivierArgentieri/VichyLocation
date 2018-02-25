@@ -1,21 +1,54 @@
 {% extends 'base_admin.html.twig' %}
 
+{% block stylesheets %}
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.css">
+{% endblock %}
+
 {% block page_wrapper %}
     <h1>Renting edit</h1>
 
     {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+    {% for error in edit_form.vars.errors.form.getErrors(true) %}
+        <div class="alert-danger"><i class="fa fa-exclamation-triangle"></i> {{ error.message}}</div>
+    {% endfor %}
+    <table id="AddUser" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+            <th>BegginDate</th>
+            <th>EndDate</th>
+            <th>Flat</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{ form_widget(edit_form.begginDate) }}</td>
+            <td>{{ form_widget(edit_form.endDate) }}</td>
+            <td>{{ form_widget(edit_form.flat) }}</td>
+            <td>
+                {{ form_rest(edit_form) }}
+                <input type="submit" class="btn btn-success " value="Modifier" />
+        </tr>
+        </tbody>
+    </table>
+
     {{ form_end(edit_form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('admin-panel_renting_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <a href="{{ path('admin-panel_renting_index') }}" class="btn btn-dark"><i class="fa fa-backward"></i> Retour vers la liste </a>
+        </div>
+    </div>
+
 {% endblock page_wrapper%}
+{% block javascripts %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/js/bootstrap-datepicker.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/locales/bootstrap-datepicker.fr.min.js"></script>
+    <script>
+        $('.datepicker').datepicker({
+            format: "yyyy-mm-dd",
+            language: "fr"
+        });
+    </script>
+{% endblock javascripts %}

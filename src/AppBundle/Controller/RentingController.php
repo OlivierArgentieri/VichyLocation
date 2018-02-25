@@ -47,16 +47,6 @@ class RentingController extends Controller
 
 
         if ($form->isSubmitted() && $form->isValid()) {
-
-
-
-            echo '<script>';
-            echo 'console.log('. json_encode($renting->getBegginDate()->format('Y-m-d')) .')';
-            echo '</script>';
-            echo '<script>';
-            echo 'console.log('. json_encode($renting->getEndDate()->format('Y-m-d')) .')';
-            echo '</script>';
-
             if(strtotime($renting->getEndDate()->format('Y-m-d')) > strtotime($renting->getBegginDate()->format('Y-m-d'))) {
                 $em = $this->getDoctrine()->getManager();
 
@@ -103,9 +93,12 @@ class RentingController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            if(strtotime($renting->getEndDate()->format('Y-m-d')) > strtotime($renting->getBegginDate()->format('Y-m-d'))) {
+                $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('admin-panel_renting_edit', array('id' => $renting->getId()));
+                return $this->redirectToRoute('admin-panel_renting_index', array('id' => $renting->getId()));
+            }
+            $editForm->addError(new FormError("Erreur cohérence de date"));
         }
 
         return $this->render('renting/edit.html.twig', array(

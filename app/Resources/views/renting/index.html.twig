@@ -15,6 +15,7 @@
                         <th>Id</th>
                         <th>Beggindate</th>
                         <th>Enddate</th>
+                        <th>Appartement</th>
                         <th>Actions</th>
                     </tr>
                     </thead>
@@ -24,6 +25,8 @@
                             <td>{{ renting.id }}</td>
                             <td>{{ renting.begginDate|date('d-m-Y') }}</td>
                             <td>{{ renting.endDate|date('d-m-Y') }}</td>
+
+                            <td>{{ renting.flat}}</td>
                             <td>
                                 <a class="btn btn-success" href="{{ path('admin-panel_renting_show', { 'id': renting.id }) }}"><i class="fa fa-eye"></i> show</a>
                                 <a class="btn btn-warning" href="{{ path('admin-panel_renting_edit', { 'id': renting.id }) }}"><i class="fa fa-edit"></i> Modifier</a>
@@ -36,7 +39,7 @@
             </div>
         </div>
     </div>
-    <a class="btn btn-success" href="{{ path('admin-panel_renting_new') }}"><i class="fa fa-user"></i> Créé une nouvelle locations</a>
+    <a href="{{ path('admin-panel_renting_new') }}" class="btn btn-success" ><i class="material-icons">&#xE147;</i> <span>Ajouter une Location</span></a>
 
 {% endblock page_wrapper %}
         {% block javascripts %}
