@@ -2,7 +2,7 @@
 
 namespace AppBundle\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Flat
  */
@@ -104,7 +104,9 @@ class Flat
     private $locations;
 
     /**
-     * @var ArrayCollection<Image>
+     * @var Image
+     * @Assert\NotBlank(message="entrer au moins 1 photo")
+     * @Assert\Image()
      */
     private $images;
 
@@ -554,7 +556,7 @@ class Flat
     /**
      * Set images
      *
-     * @param array $images
+     * @param  ArrayCollection<Image> $images
      *
      * @return Flat
      */
@@ -564,11 +566,10 @@ class Flat
 
         return $this;
     }
-
     /**
      * Get images
      *
-     * @return ArrayCollection|Image[]
+     * @return string
      */
     public function getImages()
     {

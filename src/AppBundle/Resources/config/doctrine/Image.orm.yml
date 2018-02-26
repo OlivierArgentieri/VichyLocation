@@ -11,7 +11,7 @@ AppBundle\Entity\Image:
     fields:
         name:
             type: string
-            length: '100'
+            length: 100
             unique: true
         path:
             type: string

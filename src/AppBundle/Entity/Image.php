@@ -1,7 +1,7 @@
 <?php
-
 namespace AppBundle\Entity;
 
+use Symfony\Component\HttpFoundation\File\File;
 /**
  * Image
  */
@@ -27,6 +27,10 @@ class Image
      */
     private $flat;
 
+    /**
+     * @var File
+     */
+    private $file;
 
     /**
      * Get id
@@ -108,6 +112,30 @@ class Image
     public function getFlat()
     {
         return $this->flat;
+    }
+
+    /**
+     * Set file
+     *
+     * @param File $file
+     *
+     * @return string
+     */
+    public function setFile($file)
+    {
+        $this->flat = $file;
+
+        return $this;
+    }
+
+    /**
+     * Get File
+     *
+     * @return File
+     */
+    public function getFile()
+    {
+        return $this->file;
     }
 }
 

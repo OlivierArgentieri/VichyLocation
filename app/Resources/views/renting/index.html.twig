@@ -9,7 +9,7 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table id="user" class="table table-bordered dataTable" cellspacing="0" width="100%">
+                <table id="renting" class="table table-bordered dataTable" cellspacing="0" width="100%">
                     <thead>
                     <tr>
                         <th>Id</th>
@@ -42,11 +42,11 @@
     <a href="{{ path('admin-panel_renting_new') }}" class="btn btn-success" ><i class="material-icons">&#xE147;</i> <span>Ajouter une Location</span></a>
 
 {% endblock page_wrapper %}
-        {% block javascripts %}
-            <script src="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css"></script>
+{% block javascripts %}
+    <script src="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css"></script>
 
-            <script> $(document).ready(function() {
-                    $('#user').DataTable(  );
-                } );
-            </script>
-        {% endblock javascripts %}
+    <script> $(document).ready(function() {
+            $('#renting').DataTable(  );
+        } );
+    </script>
+{% endblock javascripts %}

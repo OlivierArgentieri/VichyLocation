@@ -3,7 +3,7 @@
 {% block page_wrapper %}
     <h1>Flat creation</h1>
 
-    {{ form_start(form) }}
+    {{ form_start(form, {'mutlipart': 'true'}) }}
         {{ form_widget(form) }}
         <input type="submit" value="Create" />
     {{ form_end(form) }}
