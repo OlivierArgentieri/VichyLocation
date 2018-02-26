@@ -4,6 +4,45 @@
     <h1>Flat creation</h1>
 
     {{ form_start(form, {'mutlipart': 'true'}) }}
+    {% for error in form.vars.errors.form.getErrors(true) %}
+        <div class="alert-danger"><i class="fa fa-exclamation-triangle"></i> {{ error.message}}</div>
+    {% endfor %}
+
+    <label>Nom </label>
+    {{ form_widget(form.name) }}
+
+    <label> Description </label>
+    {{ form_widget(form.description) }}
+
+    <label>Address </label>
+    {{ form_widget(form.address) }}
+
+    <label>Etage </label>
+    {{ form_widget(form.floor) }}
+
+    <label>Orientation </label>
+    {{ form_widget(form.orientation) }}
+
+    <label>Surface (en M3) </label>
+    {{ form_widget(form.area) }}
+
+    <label>Prix (charges + loyer) </label>
+    {{ form_widget(form.price) }}
+
+    <label>Loyer </label>
+    {{ form_widget(form.rent) }}
+
+    <label>Charges </label>
+    {{ form_widget(form.charges) }}
+
+    <label>Claase énergétique </label>
+    {{ form_widget(form.energyClass) }}
+
+    <label>Emission de CO2 </label>
+    {{ form_widget(form.greenHouseGasEmission) }}
+
+
+
         {{ form_widget(form) }}
         <input type="submit" value="Create" />
     {{ form_end(form) }}
