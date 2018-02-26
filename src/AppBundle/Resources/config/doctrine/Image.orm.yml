@@ -19,8 +19,8 @@ AppBundle\Entity\Image:
             unique: true
 
     manyToOne:
-            flat:
-                targetEntity: AppBundle\Entity\Flat
-                inversedBy: locations
-                cascade : [persist, refresh]
+        flat:
+            targetEntity: AppBundle\Entity\Flat
+            inversedBy: images
+            cascade : [persist, refresh]
     lifecycleCallbacks: {  }

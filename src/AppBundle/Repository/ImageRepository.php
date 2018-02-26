@@ -2,6 +2,8 @@
 
 namespace AppBundle\Repository;
 
+use AppBundle\Entity\Image;
+
 /**
  * ImageRepository
  *
@@ -10,4 +12,22 @@ namespace AppBundle\Repository;
  */
 class ImageRepository extends \Doctrine\ORM\EntityRepository
 {
+
+
+    public function isExist(Image $image)
+    {
+        //  $em = $this->getEntityManager();
+        $dql = $this->_em->createQuery('
+            SELECT i
+            FROM AppBundle:Image i
+            WHERE i.name LIKE :name
+            OR i.path LIKE :path
+        ')
+            ->setMaxResults(1)
+            ->setParameter('name', $image->getName())
+            ->setParameter('path',  $image->getPath());
+
+        $result = $dql->getOneOrNullResult();
+        return $result;
+    }
 }

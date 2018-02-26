@@ -18,6 +18,7 @@ class FlatType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('description')
             ->add('address')
             ->add('floor')
             ->add('orientation')
@@ -36,7 +37,9 @@ class FlatType extends AbstractType
             ->add('hasParking')
 
             ->add('images', FileType::class, array(
-            'label' => false,
+                'label' => false,
+                'required' => false,
+                'data_class' => null,
             ));
         /*->add('images', CollectionType::class, array(
             'entry_type' => ImageType::class,

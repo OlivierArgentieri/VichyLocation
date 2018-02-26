@@ -47,7 +47,6 @@ class UserController extends Controller
         $form->handleRequest($request);
 
         /**
-         *
          * @var $repo UserRepository
          */
         $repo = $this->getDoctrine()->getRepository(User::class);

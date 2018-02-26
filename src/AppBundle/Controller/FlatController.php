@@ -5,10 +5,12 @@ namespace AppBundle\Controller;
 use AppBundle\AppBundle;
 use AppBundle\Entity\Flat;
 use AppBundle\Entity\Image;
+use AppBundle\Repository\ImageRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -49,39 +51,38 @@ class FlatController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
             /** @var UploadedFile $file */
             $file = $flat->getImages();
-            $image = new Image();
-            $fileName = md5(uniqid()).'.'.$file->guessExtension();
-            $image->setFlat($flat);
-            $image->setName($fileName);
-            $image->setPath($fileName);
 
-            $file->move($this->getParameter('image_directory'), $fileName);
-            $flat->setImages($image);
+            /** @var $repo ImageRepository */
+            $repo = $this->getDoctrine()->getRepository(Image::class);
 
-            /** @var $images ArrayCollection<Image> */
-            /*      foreach($flat->getImages() as $file){
+            if (is_object($form->get('images')->getData())) {
+                $image = new Image();
+                $fileName = $flat->getName() . '_' . $file->getClientOriginalName();
+                $image->setFlat($flat);
+                $image->setName($fileName);
+                $image->setPath($this->getParameter('image_directory') . '\\' . $flat->getName() . '\\' . $fileName);
 
+                if (is_null($repo->isExist($image))) {
+                    $file->move($this->getParameter('image_directory') . '/' . $flat->getName(), $fileName);
 
+                    /** @var ArrayCollection|Image[] $newArray */
+                    $newArray = new ArrayCollection([$image]);
 
-                            $image->setFlat($flat);
-                            $image->setName($fileName);
-                            $image->setPath($fileName);
+                    $flat->setImages($newArray);
+                    $em = $this->getDoctrine()->getManager();
+                    $em->persist($image);
+                    $em->persist($flat);
+                    $em->flush();
+                } else {
+                    $form->addError(new FormError('Image déja existante'));
+                }
+            } else {
 
-                            $file->move($this->getParameter('image_directory'), $fileName);
-                            $images->add($image);
-                        }
-
-                        $flat->setImages($images);
-            */
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($flat);
-            $em->persist($image);
-            $em->flush();
-
-            return $this->redirectToRoute('admin-panel_flat_show', array('id' => $flat->getId()));
+                $this->getDoctrine()->getManager()->flush();
+                return $this->redirectToRoute('admin-panel_flat_add');
+            }
         }
 
         return $this->render('flat/new.html.twig', array(
@@ -119,25 +120,41 @@ class FlatController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-
             /** @var UploadedFile $file */
             $file = $flat->getImages();
 
-            $image = new Image();
-            $fileName = md5(uniqid()).'.'.$file->guessExtension();
-            $image->setFlat($flat);
-            $image->setName($fileName);
-            $image->setPath($fileName);
+            /** @var $repo ImageRepository */
+            $repo = $this->getDoctrine()->getRepository(Image::class);
 
-            $file->move($this->getParameter('image_directory'), $fileName);
-            $flat->setImages($image);;
+            if (is_object($editForm->get('images')->getData())) {
+                $image = new Image();
+                $fileName = $flat->getName() . '_' . $file->getClientOriginalName();
+                $image->setFlat($flat);
+                $image->setName($fileName);
+                $image->setPath($this->getParameter('image_directory') . '\\' . $flat->getName() . '\\' . $fileName);
 
-            $this->getDoctrine()->getManager()->persist($image);
-            $this->getDoctrine()->getManager()->flush();
+                if (is_null($repo->isExist($image))) {
+                    $file->move($this->getParameter('image_directory') . '/' . $flat->getName(), $fileName);
 
-            return $this->redirectToRoute('admin-panel_flat_edit', array('id' => $flat->getId()));
+                    /** @var ArrayCollection|Image[] $newArray */
+                    $newArray = new ArrayCollection([$image]);
+
+                    $flat->setImages($newArray);
+                    $em = $this->getDoctrine()->getManager();
+                    $em->persist($image);
+                    $em->persist($flat);
+                    $em->flush();
+
+
+                } else {
+                    $editForm->addError(new FormError('Image déja existante'));
+                }
+            }
+            else {
+                $this->getDoctrine()->getManager()->flush();
+                return $this->redirectToRoute('admin-panel_flat_edit', array('id' => $flat->getId()));
+            }
         }
-
         return $this->render('flat/edit.html.twig', array(
             'flat' => $flat,
             'edit_form' => $editForm->createView(),

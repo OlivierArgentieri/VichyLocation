@@ -4,6 +4,9 @@
     <h1>Flat edit</h1>
 
     {{ form_start(edit_form) }}
+        {% for error in edit_form.vars.errors.form.getErrors(true) %}
+            <div class="alert-danger"><i class="fa fa-exclamation-triangle"></i> {{ error.message}}</div>
+        {% endfor %}
         {{ form_widget(edit_form) }}
         <input type="submit" value="Edit" />
     {{ form_end(edit_form) }}

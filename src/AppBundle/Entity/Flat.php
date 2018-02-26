@@ -21,6 +21,11 @@ class Flat
     /**
      * @var string
      */
+    private $description;
+
+    /**
+     * @var string
+     */
     private $address;
 
     /**
@@ -104,9 +109,7 @@ class Flat
     private $locations;
 
     /**
-     * @var Image
-     * @Assert\NotBlank(message="entrer au moins 1 photo")
-     * @Assert\Image()
+     * @var ArrayCollection<Image>
      */
     private $images;
 
@@ -143,6 +146,30 @@ class Flat
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Flat
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 
     /**
@@ -556,20 +583,19 @@ class Flat
     /**
      * Set images
      *
-     * @param  ArrayCollection<Image> $images
+     * @param array $images
      *
      * @return Flat
      */
     public function setImages($images)
     {
         $this->images = $images;
-
         return $this;
     }
     /**
      * Get images
      *
-     * @return string
+     * @return ArrayCollection|Image[]
      */
     public function getImages()
     {

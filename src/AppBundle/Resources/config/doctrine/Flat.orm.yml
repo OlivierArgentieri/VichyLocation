@@ -12,6 +12,9 @@ AppBundle\Entity\Flat:
         name:
             type: string
             length: 255
+        description:
+            type: string
+            length: 255
         address:
             type: string
             length: 255
@@ -66,9 +69,8 @@ AppBundle\Entity\Flat:
             mappedBy: flat
             cascade: [ persist, refresh, remove ]
 
-    oneToMany:
-            locations:
-                targetEntity: AppBundle\Entity\Image
-                mappedBy: flat
-                cascade: [ persist, refresh, remove ]
+        images:
+            targetEntity: AppBundle\Entity\Image
+            mappedBy: flat
+            cascade: [ persist, refresh, remove ]
     lifecycleCallbacks: {  }

@@ -2,6 +2,8 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Flat;
+use AppBundle\Entity\Image;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,10 +15,18 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+        $flats = $em->getRepository(Flat::class)->findAll();
+
+        $images = $em->getRepository(Image::class)->findAll();
+        return $this->render('default/index.html.twig', array(
+            'flats' => $flats,
+            'images' => $images,
+        ));
+
+
         // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
+
     }
 
     /**
@@ -27,6 +37,8 @@ class DefaultController extends Controller
         // replace this example code with whatever you need
         return $this->render('admin/index.html.twig');
     }
+
+
 
 
 
