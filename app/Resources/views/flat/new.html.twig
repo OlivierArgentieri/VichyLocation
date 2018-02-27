@@ -3,53 +3,124 @@
 {% block page_wrapper %}
     <h1>Flat creation</h1>
 
-    {{ form_start(form, {'mutlipart': 'true'}) }}
+    {{ form_start(form, {'mutlipart': 'true' }) }}
     {% for error in form.vars.errors.form.getErrors(true) %}
         <div class="alert-danger"><i class="fa fa-exclamation-triangle"></i> {{ error.message}}</div>
     {% endfor %}
 
-    <label>Nom </label>
-    {{ form_widget(form.name) }}
+     <div class="form-row">
+        <div class="form-group col-md-6">
+            {{form_label(form.name, "Nom", {'attr': {'class':'sr-only' }}) }}
+            {{ form_widget(form.name, {'attr': {'class':'form-control' }}) }}
+        </div>
 
-    <label> Description </label>
-    {{ form_widget(form.description) }}
+        <div class="form-group col-md-6">
+            {{form_label(form.address, "Address")}}
+            {{ form_widget(form.address, {'attr': {'class':'form-control' }}) }}
+        </div>
+    </div>
 
-    <label>Address </label>
-    {{ form_widget(form.address) }}
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            {{form_label(form.description, "Description")}}
+            {{ form_widget(form.description, {'attr': {'class':'form-control' }}) }}
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            {{form_label(form.floor, "Etage")}}
+            {{ form_widget(form.floor, {'attr': {'class':'form-control' }, 'type': 'number'}) }}
+        </div>
 
-    <label>Etage </label>
-    {{ form_widget(form.floor) }}
+        <div class="form-group col-md-4">
+            {{form_label(form.orientation, "Orientation")}}
+            {{ form_widget(form.orientation, {'attr': {'class':'form-control' }}) }}
+        </div>
 
-    <label>Orientation </label>
-    {{ form_widget(form.orientation) }}
+        <div class="form-group col-md-4">
+            {{form_label(form.area, "Surface (en M²)")}}
+            {{ form_widget(form.area, {'attr': {'class':'form-control', 'min': '0' }, 'type': 'number' }) }}
+        </div>
+    </div>
 
-    <label>Surface (en M3) </label>
-    {{ form_widget(form.area) }}
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            {{form_label(form.price, "Prix (charges + loyer) ")}}
+            {{ form_widget(form.price, {'attr': {'class':'form-control', 'min': '0' }, 'type': 'number' }) }}
+        </div>
+        <div class="form-group col-md-4">
+            {{form_label(form.rent, "Loyer ")}}
+            {{ form_widget(form.rent, {'attr': {'class':'form-control', 'min': '0' }, 'type': 'number' }) }}
+        </div>
+        <div class="form-group col-md-4">
+            {{form_label(form.charges, "Charges ")}}
+            {{ form_widget(form.charges, {'attr': {'class':'form-control', 'min': '0' }, 'type': 'number' }) }}
+        </div>
+    </div>
 
-    <label>Prix (charges + loyer) </label>
-    {{ form_widget(form.price) }}
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            {{form_label(form.energyClass, "Classe énergétique")}}
+            {{ form_widget(form.energyClass, {'attr': {'class':'form-control', 'maxlength':1 }}) }}
+        </div>
+        <div class="form-group col-md-4">
+            {{form_label(form.greenHouseGasEmission, "Emission de CO2")}}
+            {{ form_widget(form.greenHouseGasEmission, {'attr': {'class':'form-control'}}) }}
+        </div>
+        <div class="form-group col-md-4">
+            {{form_label(form.numberOfRooms, "Nombre de piéces ?  ")}}
+            {{ form_widget(form.numberOfRooms, {'attr': {'class':'form-control', 'min': '0' }, 'type': 'number' }) }}
+        </div>
+    </div>
 
-    <label>Loyer </label>
-    {{ form_widget(form.rent) }}
+    <div class="form-row mb-3">
+        <div class="form-check col-md-2">
+            {{ form_widget(form.furnished, {'attr': {'class':'form-check-input'}}) }}
+            {{form_label(form.furnished, "Meublé ?", {'attr': {'class':'form-check-label'}})}}
+        </div>
+        <div class="form-check col-md-2">
+            {{ form_widget(form.hasTv, {'attr': {'class':'form-check-input'}}) }}
+            {{form_label(form.hasTv, "TV ?", {'attr': {'class':'form-check-label'}})}}
+        </div>
+        <div class="form-check col-md-2">
+            {{ form_widget(form.hasWashingMachine, {'attr': {'class':'form-check-input'}}) }}
+            {{form_label(form.hasWashingMachine, "Machine à laver ?", {'attr': {'class':'form-check-label'}})}}
+        </div>
+        <div class="form-check col-md-2">
+            {{ form_widget(form.isPetsAllowed, {'attr': {'class':'form-check-input'}}) }}
+            {{form_label(form.isPetsAllowed, "Animaux accépter ?", {'attr': {'class':'form-check-label'}})}}
+        </div>
+        <div class="form-check col-md-2">
+            {{ form_widget(form.hasInternet, {'attr': {'class':'form-check-input'}}) }}
+            {{form_label(form.hasInternet, "Internet ?", {'attr': {'class':'form-check-label'}})}}
+        </div>
+        <div class="form-check col-md-2">
+            {{ form_widget(form.hasParking, {'attr': {'class':'form-check-input'}}) }}
+            {{form_label(form.hasParking, "Parking ?", {'attr': {'class':'form-check-label'}})}}
+        </div>
+    </div>
 
-    <label>Charges </label>
-    {{ form_widget(form.charges) }}
 
-    <label>Claase énergétique </label>
-    {{ form_widget(form.energyClass) }}
+    <div class="form-row mb-5">
+        <div class="form-group col-md-4">
 
-    <label>Emission de CO2 </label>
-    {{ form_widget(form.greenHouseGasEmission) }}
+            {{form_label(form.images, "Upload Photo (2mb max)", {'attr': {'class':'custom-file-label fa fa-file'}})}}
+            {{ form_widget(form.images,{'attr': {'class':'form-control-file btn btn-primary'}} )}}
+            <div class="invalid-feedback">Example invalid custom file feedback</div>
+        </div>
+    </div>
 
-
-
+    <div class="form-row">
+        <div class="form-group col-md-6 text-right">
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+            <input type="submit" value="Créer l'appartement" class="btn btn-success btn-lg" />
+        </div>
+    </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('admin-panel_flat_index') }}">Back to the list</a>
-        </li>
-    </ul>
+
+    <div class="form-row mb-5">
+        <div class="col-md-12 text-left ">
+            <a href="{{ path('admin-panel_flat_index') }}" class="btn btn-dark"><i class="fa fa-backward"></i> Retour vers la liste </a>
+        </div>
+    </div>
 {% endblock page_wrapper %}
