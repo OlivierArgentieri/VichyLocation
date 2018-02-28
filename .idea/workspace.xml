@@ -5,12 +5,9 @@
     <bookmark url="file://$PROJECT_DIR$/app/Resources/views/user/show.html.twig" line="12" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29b291f2-6ed7-4735-95fc-ce71518068f2" name="Default" comment="newFlat : Form 2/2&#10;&#10;BUG : Can't add flat without image | width image are false on index /!\">
+    <list default="true" id="29b291f2-6ed7-4735-95fc-ce71518068f2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base_admin.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base_admin.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/flat/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/flat/new.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -48,8 +45,8 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1830">
-              <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
+            <state relative-caret-position="130">
+              <caret line="64" column="46" lean-forward="false" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -417,7 +414,7 @@
       <workItem from="1519200527711" duration="4870000" />
       <workItem from="1519231291884" duration="2059000" />
       <workItem from="1519315370479" duration="21940000" />
-      <workItem from="1519530924260" duration="68857000" />
+      <workItem from="1519530924260" duration="70545000" />
     </task>
     <task id="LOCAL-00001" summary="Add connection to BDD and schema">
       <created>1518281856593</created>
@@ -657,11 +654,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519707282150</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Index: ADD : Carousel for flat image&#10;&#10;BUG : Can't add flat without image">
+      <created>1519786106035</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1519786106035</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="234471000" />
+    <option name="totallyTimeSpent" value="236159000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -723,7 +727,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="try to make interface for FosUser" />
     <MESSAGE value="need fix problem : Invalid CSRF token." />
     <MESSAGE value="Fixed : CSR problem" />
     <MESSAGE value="CRUD : Full Functional&#10;&#10;-----------------------&#10;need to make ADMIN interface" />
@@ -748,7 +751,8 @@
     <MESSAGE value="Upload FlatImage 1.5/2&#10;Index : Test with Images foreach" />
     <MESSAGE value="newFlat : start fom" />
     <MESSAGE value="newFlat : Form 2/2&#10;&#10;BUG : Can't add flat without image | width image are false on index /!\" />
-    <option name="LAST_COMMIT_MESSAGE" value="newFlat : Form 2/2&#10;&#10;BUG : Can't add flat without image | width image are false on index /!\" />
+    <MESSAGE value="Index: ADD : Carousel for flat image&#10;&#10;BUG : Can't add flat without image" />
+    <option name="LAST_COMMIT_MESSAGE" value="Index: ADD : Carousel for flat image&#10;&#10;BUG : Can't add flat without image" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1158,8 +1162,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1830">
-          <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
+        <state relative-caret-position="130">
+          <caret line="64" column="46" lean-forward="false" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
           <folding />
         </state>
       </provider>
