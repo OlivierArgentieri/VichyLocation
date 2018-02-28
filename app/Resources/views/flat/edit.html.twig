@@ -3,6 +3,137 @@
 {% block page_wrapper %}
     <h1>Flat edit</h1>
 
+
+    {{ form_start(edit_form, {'mutlipart': 'true' }) }}
+    {% for error in edit_form.vars.errors.form.getErrors(true) %}
+        <div class="alert-danger"><i class="fa fa-exclamation-triangle"></i> {{ error.message}}</div>
+    {% endfor %}
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            {{form_label(edit_form.name, "Nom", {'attr': {'class':'sr-only' }}) }}
+            {{ form_widget(edit_form.name, {'attr': {'class':'form-control' }}) }}
+        </div>
+
+        <div class="form-group col-md-6">
+            {{form_label(edit_form.address, "Address")}}
+            {{ form_widget(edit_form.address, {'attr': {'class':'form-control' }}) }}
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            {{form_label(edit_form.description, "Description")}}
+            {{ form_widget(edit_form.description, {'attr': {'class':'form-control' }}) }}
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            {{form_label(edit_form.floor, "Etage")}}
+            {{ form_widget(edit_form.floor, {'attr': {'class':'form-control' }, 'type': 'number'}) }}
+        </div>
+
+        <div class="form-group col-md-4">
+            {{form_label(edit_form.orientation, "Orientation")}}
+            {{ form_widget(edit_form.orientation, {'attr': {'class':'form-control' }}) }}
+        </div>
+
+        <div class="form-group col-md-4">
+            {{form_label(edit_form.area, "Surface (en M²)")}}
+            {{ form_widget(edit_form.area, {'attr': {'class':'form-control', 'min': '0' }, 'type': 'number' }) }}
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            {{form_label(edit_form.price, "Prix (charges + loyer) ")}}
+            {{ form_widget(edit_form.price, {'attr': {'class':'form-control', 'min': '0' }, 'type': 'number' }) }}
+        </div>
+        <div class="form-group col-md-4">
+            {{form_label(edit_form.rent, "Loyer ")}}
+            {{ form_widget(edit_form.rent, {'attr': {'class':'form-control', 'min': '0' }, 'type': 'number' }) }}
+        </div>
+        <div class="form-group col-md-4">
+            {{form_label(edit_form.charges, "Charges ")}}
+            {{ form_widget(edit_form.charges, {'attr': {'class':'form-control', 'min': '0' }, 'type': 'number' }) }}
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-4">
+            {{form_label(edit_form.energyClass, "Classe énergétique")}}
+            {{ form_widget(edit_form.energyClass, {'attr': {'class':'form-control', 'maxlength':1 }}) }}
+        </div>
+        <div class="form-group col-md-4">
+            {{form_label(edit_form.greenHouseGasEmission, "Emission de CO2")}}
+            {{ form_widget(edit_form.greenHouseGasEmission, {'attr': {'class':'form-control'}}) }}
+        </div>
+        <div class="form-group col-md-4">
+            {{form_label(edit_form.numberOfRooms, "Nombre de piéces ?  ")}}
+            {{ form_widget(edit_form.numberOfRooms, {'attr': {'class':'form-control', 'min': '0' }, 'type': 'number' }) }}
+        </div>
+    </div>
+
+    <div class="form-row mb-3">
+        <div class="form-check col-md-2">
+            {{ form_widget(edit_form.furnished, {'attr': {'class':'form-check-input'}}) }}
+            {{form_label(edit_form.furnished, "Meublé ?", {'attr': {'class':'form-check-label'}})}}
+        </div>
+        <div class="form-check col-md-2">
+            {{ form_widget(edit_form.hasTv, {'attr': {'class':'form-check-input'}}) }}
+            {{form_label(edit_form.hasTv, "TV ?", {'attr': {'class':'form-check-label'}})}}
+        </div>
+        <div class="form-check col-md-2">
+            {{ form_widget(edit_form.hasWashingMachine, {'attr': {'class':'form-check-input'}}) }}
+            {{form_label(edit_form.hasWashingMachine, "Machine à laver ?", {'attr': {'class':'form-check-label'}})}}
+        </div>
+        <div class="form-check col-md-2">
+            {{ form_widget(edit_form.isPetsAllowed, {'attr': {'class':'form-check-input'}}) }}
+            {{form_label(edit_form.isPetsAllowed, "Animaux accépter ?", {'attr': {'class':'form-check-label'}})}}
+        </div>
+        <div class="form-check col-md-2">
+            {{ form_widget(edit_form.hasInternet, {'attr': {'class':'form-check-input'}}) }}
+            {{form_label(edit_form.hasInternet, "Internet ?", {'attr': {'class':'form-check-label'}})}}
+        </div>
+        <div class="form-check col-md-2">
+            {{ form_widget(edit_form.hasParking, {'attr': {'class':'form-check-input'}}) }}
+            {{form_label(edit_form.hasParking, "Parking ?", {'attr': {'class':'form-check-label'}})}}
+        </div>
+    </div>
+
+    <div class="form-row mb-5">
+        <div class="form-group col-md-4">
+
+            {{form_label(edit_form.images, "Upload Photo (2mb max)", {'attr': {'class':'custom-file-label fa fa-file'}})}}
+            {{ form_widget(edit_form.images,{'attr': {'class':'form-control-file btn btn-primary'}} )}}
+            <div class="invalid-feedback">Example invalid custom file feedback</div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6 text-right">
+            {{ form_widget(edit_form) }}
+            <input type="submit" value="Modifier l'appartement" class="btn btn-success btn-lg" />
+            {{ form_end(edit_form) }}
+        </div>
+        <div class="form-group col-md-6 text-left">
+            <a class="btn btn-danger btn-lg" href="" data-target="#deleteModal" data-toggle="modal"><i class="fa fa-trash"></i> Supprimer</a>
+        </div>
+    </div>
+
+
+
+    <div class="form-row mb-5">
+        <div class="col-md-12 text-left ">
+            <a href="{{ path('admin-panel_flat_index') }}" class="btn btn-dark"><i class="fa fa-backward"></i> Retour vers la liste </a>
+        </div>
+    </div>
+
+
+
+    {#
+
+
     {{ form_start(edit_form) }}
         {% for error in edit_form.vars.errors.form.getErrors(true) %}
             <div class="alert-danger"><i class="fa fa-exclamation-triangle"></i> {{ error.message}}</div>
@@ -10,15 +141,29 @@
         {{ form_widget(edit_form) }}
         <input type="submit" value="Edit" />
     {{ form_end(edit_form) }}
+    #}
 
-    <ul>
-        <li>
-            <a href="{{ path('admin-panel_flat_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    <!-- Delete Modal-->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirmation</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Voulez vous vraiment supprimer cet appartement ? </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Annuler</button>
+                    {{ form_start(delete_form) }}
+                    <input class="btn btn-primary" type="submit" value="Oui">
+                    {{ form_end(delete_form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 {% endblock page_wrapper %}
