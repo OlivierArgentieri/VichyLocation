@@ -2,6 +2,7 @@
 
 {% block stylesheets %}
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 {% endblock %}
 
 
@@ -12,7 +13,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                   <!-- <h1 class="display-3 text-center text-white mt-4">Business Name or Tagline</h1> -->
+                    <!-- <h1 class="display-3 text-center text-white mt-4">Business Name or Tagline</h1> -->
                 </div>
             </div>
         </div>
@@ -48,9 +49,61 @@
             {% for flat in flats %}
                 <div class="col-sm-4 my-4">
                     <div class="card">
-                        {{ dump(flat) }}
+                        <div id="Carousel" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#Carousel" data-slide-to="1"></li>
+                                <li data-target="#Carousel" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                {% for i in 0..flat.images()|length-1 %}
+                                    {% if (i== 0) %}
+                                        <div class="item active">
+                                            <img class="d-block w-100"
+                                                 src="{{ asset("uploads/images/") }}{{ flat.getName() }}/{{ flat.images()[i].getName() }}"
+                                                 alt="First slide">
+                                        </div>
+                                    {% else %}
+                                        <div class="item">
+                                            <img class="d-block w-100"
+                                                 src="{{ asset("uploads/images/") }}{{ flat.getName() }}/{{ flat.images()[i].getName() }}"
+                                                 alt="First slide">
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                            <a class="carousel-control-prev" href="#carousel" role="button"
+                               data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carousel" role="button"
+                               data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title">Description</h4>
+                            <p class="card-text"> {{ flat.getDescription() }}</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary">En savoir plus !</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+
+        {#
+        <div class="row">
+            {% for flat in flats %}
+                <div class="col-sm-4 my-4">
+                    <div class="card">
                         {% for i in flat.images() %}
-                            <img class="card-img-top" src="{{ asset("uploads/images/") }}{{ flat.getName() }}/{{ i.getName() }}" alt="">
+                            <img class="img-thumbnail"
+                                 src="{{ asset("uploads/images/") }}{{ flat.getName() }}/{{ i.getName() }}" alt="">
                         {% endfor %}
                         <div class="card-body">
                             <h4 class="card-title">Description</h4>
@@ -67,7 +120,8 @@
                     <img class="card-img-top" src="http://placehold.it/300x200" alt="">
                     <div class="card-body">
                         <h4 class="card-title">Description</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus totam ut praesentium aut.</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse
+                            necessitatibus neque sequi doloribus totam ut praesentium aut.</p>
                     </div>
                     <div class="card-footer">
                         <a href="#" class="btn btn-primary">En savoir plus !</a>
@@ -79,14 +133,15 @@
                     <img class="card-img-top" src="http://placehold.it/300x200" alt="">
                     <div class="card-body">
                         <h4 class="card-title">Description</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse
+                            necessitatibus neque.</p>
                     </div>
                     <div class="card-footer">
                         <a href="#" class="btn btn-primary">En savoir plus !</a>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>#}
         <!-- /.row -->
         <div class="row">
             <div class="col-sm-4 my-4">
@@ -94,7 +149,8 @@
                     <img class="card-img-top" src="http://placehold.it/300x200" alt="">
                     <div class="card-body">
                         <h4 class="card-title">Description</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus.</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse
+                            necessitatibus neque sequi doloribus.</p>
                     </div>
                     <div class="card-footer">
                         <a href="#" class="btn btn-primary">En savoir plus !</a>
@@ -106,7 +162,8 @@
                     <img class="card-img-top" src="http://placehold.it/300x200" alt="">
                     <div class="card-body">
                         <h4 class="card-title">Description</h4>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque sequi doloribus totam ut praesentium aut.</p>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse
+                            necessitatibus neque sequi doloribus totam ut praesentium aut.</p>
                     </div>
                     <div class="card-footer">
                         <a href="#" class="btn btn-primary">En savoir plus !</a>
@@ -130,7 +187,27 @@
 
 
 
-{% block javascripts %}
-    <script src="{{ asset("vendor/jquery/jquery.min.js") }}"></script>
-    <script src="{{ asset("vendor/bootstrap/js/bootstrap.bundle.min.js") }}"></script>
-{% endblock %}
+    {% block javascripts %}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script>
+
+            // Activate Carousel
+            //   $("#carousel").carousel();
+
+            $('#Carousel').carousel({
+                interval: 2000
+            });
+
+            // Enable Carousel Indicators
+            $(".carousel-control-next").click(function () {
+                $("#Carousel").carousel('next');
+            });
+
+            // Enable Carousel Controls
+            $(".carousel-control-prev").click(function () {
+                $("#Carousel").carousel("prev");
+            });
+        </script>
+    {% endblock %}

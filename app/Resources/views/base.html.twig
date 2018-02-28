@@ -10,9 +10,18 @@
     <link rel="icon" href="favicon.ico">
 
     {% block base_stylesheets %}
+        <link href="{{ asset("../vendor/bootstrap/css/bootstrap.min.css") }}" rel="stylesheet">
+        <!-- Custom fonts for this template-->
+        <link href="{{ asset("../vendor/font-awesome/css/font-awesome.min.css") }}" rel="stylesheet" type="text/css">
+        <!-- Page level plugin CSS-->
+        <link href="{{ asset("../vendor/datatables/css/dataTables.bootstrap4.css") }}" rel="stylesheet">
+        <!-- Custom styles for this template-->
+        <link href="{{ asset("../css/sb-admin.css") }}" rel="stylesheet">
+
         {% block stylesheets %}
-        {% endblock %}
-    {% endblock base_stylesheets %}
+        {% endblock stylesheets %}
+
+    {% endblock %}
 
 
     <title>{% block title %}Something Clever Here!{% endblock %}</title>
@@ -34,11 +43,20 @@
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
+{% block base_javascripts %}
+    <!-- jQuery-->
+    <script src="{{ asset("vendor/jquery/jquery.min.js") }}"></script>
+    <script src="{{ asset("vendor/bootstrap/js/bootstrap.bundle.min.js") }}"></script>
 
-{% block javascripts %}
+    <!-- Core plugin JavaScipt
+    <script src="{{ asset("vendor/jquery-easing/jquery.easing.min.js") }}"></script>-->
+    <!-- Page level plugin JavaScript
+    <script src="{{ asset("vendor/chart.js/Chart.min.js")}}"></script>
+    <script src="{{ asset("vendor/datatables/js/jquery.dataTables.js")}}"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-{% endblock %}
+    -->
+    {% block javascripts %}
+    {% endblock javascripts %}
 
+{% endblock base_javascripts%}
 </html>
