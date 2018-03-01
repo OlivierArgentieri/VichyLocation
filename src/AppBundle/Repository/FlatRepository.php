@@ -2,6 +2,8 @@
 
 namespace AppBundle\Repository;
 
+use AppBundle\Entity\Flat;
+
 /**
  * FlatRepository
  *
@@ -10,4 +12,18 @@ namespace AppBundle\Repository;
  */
 class FlatRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function isExist(Flat $flat)
+    {
+        //  $em = $this->getEntityManager();
+        $dql = $this->_em->createQuery('
+            SELECT f
+            FROM AppBundle:Flat f
+            WHERE f.name LIKE :name
+        ')
+            ->setMaxResults(1)
+            ->setParameter('name', $flat->getName());
+
+        $result = $dql->getOneOrNullResult();
+        return $result;
+    }
 }

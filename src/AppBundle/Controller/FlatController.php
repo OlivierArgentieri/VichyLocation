@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use AppBundle\AppBundle;
 use AppBundle\Entity\Flat;
 use AppBundle\Entity\Image;
+use AppBundle\Repository\FlatRepository;
 use AppBundle\Repository\ImageRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -54,9 +55,13 @@ class FlatController extends Controller
             /** @var UploadedFile $file */
             $file = $flat->getImages();
 
-            /** @var $repo ImageRepository */
-            $repo = $this->getDoctrine()->getRepository(Image::class);
+            //var_dump($flat);
+            /** @var $repoImg ImageRepository */
+            /** @var $repoFlat FlatRepository */
+            $repoImg = $this->getDoctrine()->getRepository(Image::class);
+            $repoFlat = $this->getDoctrine()->getRepository(Flat::class);
 
+            // test pour savoir si une image est passer
             if (is_object($form->get('images')->getData())) {
                 $image = new Image();
                 $fileName = $flat->getName() . '_' . $file->getClientOriginalName();
@@ -64,7 +69,8 @@ class FlatController extends Controller
                 $image->setName($fileName);
                 $image->setPath($this->getParameter('image_directory') . '\\' . $flat->getName() . '\\' . $fileName);
 
-                if (is_null($repo->isExist($image))) {
+                // Test pour savoir si l'appartement et l'image existe déja
+                if (is_null($repoImg->isExist($image)) && is_null($repoFlat->isExist($flat))) {
                     $file->move($this->getParameter('image_directory') . '/' . $flat->getName(), $fileName);
 
                     /** @var ArrayCollection|Image[] $newArray */
@@ -75,14 +81,31 @@ class FlatController extends Controller
                     $em->persist($image);
                     $em->persist($flat);
                     $em->flush();
+
+                    return $this->redirectToRoute('admin-panel_flat_index');
                 } else {
-                    $form->addError(new FormError('Image déja existante'));
+                    if (!is_null($repoImg->isExist($image)))
+                        $form->addError(new FormError('Image déja existante'));
+                    if (!is_null($repoFlat->isExist($flat)))
+                        $form->addError(new FormError('Appartement déja existant'));
                 }
             } else {
 
-                $this->getDoctrine()->getManager()->flush();
-                return $this->redirectToRoute('admin-panel_flat_add');
+                if (is_null($repoFlat->isExist($flat))) {
+                    /** @var ArrayCollection|Image[] $newArray */
+                    $newArray = new ArrayCollection();
+                    $flat->setImages($newArray);
+                    $em = $this->getDoctrine()->getManager();
+                    $em->persist($flat);
+                    $em->flush();
+                    return $this->redirectToRoute('admin-panel_flat_index');
+                }
+                else {
+                    $form->addError(new FormError('Appartement déja existant'));
+                }
+
             }
+
         }
 
         return $this->render('flat/new.html.twig', array(
@@ -123,8 +146,10 @@ class FlatController extends Controller
             /** @var UploadedFile $file */
             $file = $flat->getImages();
 
-            /** @var $repo ImageRepository */
-            $repo = $this->getDoctrine()->getRepository(Image::class);
+            /** @var $repoImg ImageRepository */
+            /** @var $repoFlat FlatRepository */
+            $repoImg = $this->getDoctrine()->getRepository(Image::class);
+            $repoFlat = $this->getDoctrine()->getRepository(Flat::class);
 
             if (is_object($editForm->get('images')->getData())) {
                 $image = new Image();
