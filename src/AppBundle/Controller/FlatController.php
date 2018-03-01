@@ -99,8 +99,7 @@ class FlatController extends Controller
                     $em->persist($flat);
                     $em->flush();
                     return $this->redirectToRoute('admin-panel_flat_index');
-                }
-                else {
+                } else {
                     $form->addError(new FormError('Appartement déja existant'));
                 }
 
@@ -149,7 +148,6 @@ class FlatController extends Controller
             /** @var $repoImg ImageRepository */
             /** @var $repoFlat FlatRepository */
             $repoImg = $this->getDoctrine()->getRepository(Image::class);
-            $repoFlat = $this->getDoctrine()->getRepository(Flat::class);
 
             if (is_object($editForm->get('images')->getData())) {
                 $image = new Image();
@@ -158,7 +156,7 @@ class FlatController extends Controller
                 $image->setName($fileName);
                 $image->setPath($this->getParameter('image_directory') . '\\' . $flat->getName() . '\\' . $fileName);
 
-                if (is_null($repo->isExist($image))) {
+                if (is_null($repoImg->isExist($image))) {
                     $file->move($this->getParameter('image_directory') . '/' . $flat->getName(), $fileName);
 
                     /** @var ArrayCollection|Image[] $newArray */
@@ -169,15 +167,12 @@ class FlatController extends Controller
                     $em->persist($image);
                     $em->persist($flat);
                     $em->flush();
-
-
                 } else {
                     $editForm->addError(new FormError('Image déja existante'));
                 }
-            }
-            else {
+            } else {
                 $this->getDoctrine()->getManager()->flush();
-                return $this->redirectToRoute('admin-panel_flat_edit', array('id' => $flat->getId()));
+                return $this->redirectToRoute('admin-panel_flat_index', array('id' => $flat->getId()));
             }
         }
         return $this->render('flat/edit.html.twig', array(
@@ -219,8 +214,7 @@ class FlatController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('admin-panel_flat_delete', array('id' => $flat->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
 
     /**
