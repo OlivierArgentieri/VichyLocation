@@ -3,6 +3,9 @@
 {% block stylesheets %}
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link href="{{ asset("../css/custom-theme-index.css") }}" rel="stylesheet">
+
 {% endblock %}
 
 
@@ -56,15 +59,20 @@
                                     {% for i in 0..flat.images()|length-1 %}
                                         {% if (i== 0) %}
                                             <div class="item active">
-                                                <img class="d-block w-100"
+                                                <div class="img-wrapper">
+                                                <img class="d-block w-100 img-fluid img-fixed"
                                                      src="{{ asset("uploads/images/") }}{{ flat.getName() }}/{{ flat.images()[i].getName() }}"
                                                      alt="First slide">
+                                                </div>
                                             </div>
                                         {% else %}
+
                                             <div class="item">
-                                                <img class="d-block w-100"
+                                                <div class="img-wrapper">
+                                                <img class="d-block w-100 img-fluid img-fixed"
                                                      src="{{ asset("uploads/images/") }}{{ flat.getName() }}/{{ flat.images()[i].getName() }}"
                                                      alt="First slide">
+                                                </div>
                                             </div>
                                         {% endif %}
                                     {% endfor %}

@@ -1,0 +1,12 @@
+.img-wrapper{
+  width: 448px;
+  height: 252px;
+  overflow: hidden;
+}
+
+.img-fixed {
+  height: 100%;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+}
