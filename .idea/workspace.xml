@@ -6,12 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="29b291f2-6ed7-4735-95fc-ce71518068f2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/custom-theme-index.css" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/css/business-frontpage.css" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/flat/edit.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/flat/edit.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/flat/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/flat/new.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -509,7 +504,7 @@
       <workItem from="1519231291884" duration="2059000" />
       <workItem from="1519315370479" duration="21940000" />
       <workItem from="1519530924260" duration="87378000" />
-      <workItem from="1520323558688" duration="3472000" />
+      <workItem from="1520323558688" duration="3520000" />
     </task>
     <task id="LOCAL-00001" summary="Add connection to BDD and schema">
       <created>1518281856593</created>
@@ -791,11 +786,18 @@
       <option name="project" value="LOCAL" />
       <updated>1519869094103</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Index : Resize img ok">
+      <created>1520328280815</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1520328280815</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="256464000" />
+    <option name="totallyTimeSpent" value="256512000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -857,7 +859,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Sb-admin 2 &gt; Sb-Admin 4 OK" />
     <MESSAGE value="Add Action Item menu" />
     <MESSAGE value="View : Show user OK" />
     <MESSAGE value="View : Show user OK&#10;View : Add user OK&#10;View : List user OK" />
@@ -882,7 +883,8 @@
     <MESSAGE value="Edit/Add Flat : greenHouseGasEmission maxlength input : 1&#10;&#10;BUG : Can't add flat without image" />
     <MESSAGE value="ADD : Flat : test for unique flat / image ok &#10;&#10;Patched : Can't add flat without image" />
     <MESSAGE value="Edit : Unique on image OK" />
-    <option name="LAST_COMMIT_MESSAGE" value="Edit : Unique on image OK" />
+    <MESSAGE value="Index : Resize img ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Index : Resize img ok" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
