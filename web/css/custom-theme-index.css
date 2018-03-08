@@ -1,8 +1,15 @@
-.img-wrapper{
+.img-wrapper-300-200{
   width: 448px;
   height: 252px;
   overflow: hidden;
 }
+
+.img-wrapper-1900-1080{
+    width: 1900px;
+    height: 930px;
+    overflow: hidden;
+}
+
 
 .img-fixed {
   height: 100%;
