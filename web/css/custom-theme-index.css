@@ -4,16 +4,31 @@
   overflow: hidden;
 }
 
-.img-wrapper-1900-1080{
-    width: 1900px;
-    height: 930px;
-    overflow: hidden;
-}
-
 
 .img-fixed {
   height: 100%;
   position: relative;
   margin-right: auto;
   margin-left: auto;
+}
+
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 56px;
+    }
+}
+
+.img-wrapper-1900x1080 {
+    height: 65vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.portfolio-item {
+    margin-bottom: 30px;
 }
