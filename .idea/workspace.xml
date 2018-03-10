@@ -8,7 +8,6 @@
     <list default="true" id="29b291f2-6ed7-4735-95fc-ce71518068f2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/custom-theme-index.css" afterPath="$PROJECT_DIR$/web/css/custom-theme-index.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,8 +25,8 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="202" column="16" lean-forward="false" selection-start-line="202" selection-start-column="16" selection-end-line="202" selection-end-column="16" />
+            <state relative-caret-position="408">
+              <caret line="249" column="16" lean-forward="false" selection-start-line="249" selection-start-column="16" selection-end-line="249" selection-end-column="16" />
               <folding>
                 <element signature="e#1990#2052#0#HTML" expanded="true" />
                 <element signature="e#2453#2514#0#HTML" expanded="true" />
@@ -519,7 +518,7 @@
       <workItem from="1519315370479" duration="21940000" />
       <workItem from="1519530924260" duration="87378000" />
       <workItem from="1520323558688" duration="4125000" />
-      <workItem from="1520520893603" duration="16135000" />
+      <workItem from="1520520893603" duration="18177000" />
     </task>
     <task id="LOCAL-00001" summary="Add connection to BDD and schema">
       <created>1518281856593</created>
@@ -822,11 +821,18 @@
       <option name="project" value="LOCAL" />
       <updated>1520532976200</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Index : All Carousel OK&#10;&#10;patch: Image not responsive ont principal carousel">
+      <created>1520603311853</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1520603311853</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="273252000" />
+    <option name="totallyTimeSpent" value="275294000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -888,7 +894,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="View : Show user OK" />
     <MESSAGE value="View : Show user OK&#10;View : Add user OK&#10;View : List user OK" />
     <MESSAGE value="&#10;View : List user : add Button" />
     <MESSAGE value="&#10;View : List user : OK" />
@@ -913,7 +918,8 @@
     <MESSAGE value="Edit : Unique on image OK" />
     <MESSAGE value="Index : Resize img ok" />
     <MESSAGE value="Index : patch bootsrap conflict  + add nav-bar and carousel.&#10;&#10;Bug: Image not responsive ont principal carousel" />
-    <option name="LAST_COMMIT_MESSAGE" value="Index : patch bootsrap conflict  + add nav-bar and carousel.&#10;&#10;Bug: Image not responsive ont principal carousel" />
+    <MESSAGE value="Index : All Carousel OK&#10;&#10;patch: Image not responsive ont principal carousel" />
+    <option name="LAST_COMMIT_MESSAGE" value="Index : All Carousel OK&#10;&#10;patch: Image not responsive ont principal carousel" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1297,8 +1303,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="202" column="16" lean-forward="false" selection-start-line="202" selection-start-column="16" selection-end-line="202" selection-end-column="16" />
+        <state relative-caret-position="408">
+          <caret line="249" column="16" lean-forward="false" selection-start-line="249" selection-start-column="16" selection-end-line="249" selection-end-column="16" />
           <folding>
             <element signature="e#1990#2052#0#HTML" expanded="true" />
             <element signature="e#2453#2514#0#HTML" expanded="true" />
