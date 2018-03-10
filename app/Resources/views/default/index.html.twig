@@ -82,11 +82,20 @@
     <section class="bg-dark text-white" id="Appartements">
         <div class="container">
             <div class="row">
+                <div class=" mx-auto text-center">
+                    <h2 class="section-heading text-white mt-5 mb-2">
+                        <strong>Nos appartement :</strong>
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
                 {% for flat in flats %}
                     <div class="col-sm-4 my-4">
-                        <div class="card w-100">
+                        <div class="card w-100 mb-5">
                             <div id="Carousel-{{ flat.getId() }}" class="carousel slide" data-ride="carousel" data-wrap="false" data-interval="3000">
-
                                 <div class="carousel-inner" role="listbox">
                                     {% if (flat.images()|length > 0) %}
                                         {% for i in 0..flat.images()|length-1 %}
