@@ -13,8 +13,8 @@ AppBundle\Entity\Flat:
             type: string
             length: 255
         description:
-            type: string
-            length: 255
+            type: text
+            length: 65534
         address:
             type: string
             length: 255
