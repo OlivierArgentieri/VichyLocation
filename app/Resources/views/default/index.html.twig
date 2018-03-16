@@ -158,7 +158,7 @@
                             </div>
                             <div class="card-body">
                                 <h4 class="card-title">Description</h4>
-                                <p class="card-text"> {{ flat.getDescription() }}</p>
+                                <p class="card-text" id="card-text-{{ flat.getId() }}"> {{ flat.getDescription() }}</p>
                             </div>
                             <div class="card-footer">
                                 <a href="#" class="btn btn-primary">En savoir plus !</a>
@@ -213,6 +213,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="{{ asset("js/js-navbar/navbar-collapse.js") }}"></script>
+        <script type="text/javascript" src="https://viralpatel.net/blogs/demo/jquery/jquery.shorten.1.0.js"></script>
 
 
         <script>
@@ -232,6 +233,15 @@
                 $("#carousel-prev-{{ flat.getId() }}").click(function () {
                     $("#Carousel-{{ flat.getId() }}").carousel("prev");
                 });
+
+                // Lire plus
+                $("#card-text-{{ flat.getId() }}").shorten({
+                    "showChars" : 20,
+                    "moreText"	: "Lire la suite",
+                    "lessText"	: "Lire moins",
+                });
+
+
                 {% endfor %}
 
                 // Add scrollspy to <body>
