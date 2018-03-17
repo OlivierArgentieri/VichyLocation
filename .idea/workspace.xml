@@ -7,7 +7,6 @@
   <component name="ChangeListManager">
     <list default="true" id="29b291f2-6ed7-4735-95fc-ce71518068f2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/show_flat.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/show_flat.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+            <state relative-caret-position="272">
+              <caret line="23" column="32" lean-forward="true" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -75,10 +74,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RentingController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RentingController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/RentingController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1229">
+            <state relative-caret-position="2108">
               <caret line="139" column="41" lean-forward="true" selection-start-line="139" selection-start-column="41" selection-end-line="139" selection-end-column="41" />
               <folding />
             </state>
@@ -561,14 +560,7 @@
       <workItem from="1520520893603" duration="25579000" />
       <workItem from="1520842687303" duration="5043000" />
       <workItem from="1521048131909" duration="2446000" />
-      <workItem from="1521122477398" duration="7021000" />
-    </task>
-    <task id="LOCAL-00004" summary="Add connection to BDD and schema">
-      <created>1518448707570</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1518448707570</updated>
+      <workItem from="1521122477398" duration="7091000" />
     </task>
     <task id="LOCAL-00005" summary="Add FosUser into bdd">
       <created>1518448754406</created>
@@ -906,11 +898,18 @@
       <option name="project" value="LOCAL" />
       <updated>1521205827484</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="ShowFlat : 0.5/2">
+      <created>1521316210371</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1521316210371</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="297206000" />
+    <option name="totallyTimeSpent" value="297276000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -972,7 +971,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="&#10;Add : IsExist in repository OK&#10;View : new : user updated" />
     <MESSAGE value="&#10;Add : IsExist in repository OK (test username + mail)&#10;View : new : user updated" />
     <MESSAGE value="&#10;Add : IsExist in repository OK (test username + mail)&#10;View : new : user updated without comment..." />
     <MESSAGE value="&#10;&#10;View : ADD : OK" />
@@ -997,7 +995,8 @@
     <MESSAGE value="Index : Navbar 2/2" />
     <MESSAGE value="PAtch : SQL State 42000 : string to short for flat description : &#10;string with max length 255 -&gt; text  max length 65534" />
     <MESSAGE value="Index : include jquery.shorten for card" />
-    <option name="LAST_COMMIT_MESSAGE" value="Index : include jquery.shorten for card" />
+    <MESSAGE value="ShowFlat : 0.5/2" />
+    <option name="LAST_COMMIT_MESSAGE" value="ShowFlat : 0.5/2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1358,14 +1357,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ImageController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -1376,8 +1367,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/RentingController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1229">
+        <state relative-caret-position="2108">
           <caret line="139" column="41" lean-forward="true" selection-start-line="139" selection-start-column="41" selection-end-line="139" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="23" column="32" lean-forward="true" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
           <folding />
         </state>
       </provider>

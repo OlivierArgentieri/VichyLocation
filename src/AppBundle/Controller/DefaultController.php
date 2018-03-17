@@ -19,7 +19,7 @@ class DefaultController extends Controller
         $flats = $em->getRepository(Flat::class)->findAll();
 
         $images = $em->getRepository(Image::class)->findAll();
-        return $this->render('default/index.html.twig', array(
+        return $this->render('default/show_flat.html.twig', array(
             'flats' => $flats,
             'images' => $images,
         ));
