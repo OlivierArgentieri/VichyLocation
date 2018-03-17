@@ -11,9 +11,9 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/{id}/showFlat", name="showflat")
      */
-    public function indexAction(Request $request)
+    public function showFlatAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
         $flats = $em->getRepository(Flat::class)->findAll();
@@ -30,6 +30,23 @@ class DefaultController extends Controller
     }
 
     /**
+     * @Route("/", name="homepage")
+     */
+    public function indexAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $flats = $em->getRepository(Flat::class)->findAll();
+
+        $images = $em->getRepository(Image::class)->findAll();
+        return $this->render('default/index.html.twig', array(
+            'flats' => $flats,
+            'images' => $images,
+        ));
+        // replace this example code with whatever you need
+
+    }
+
+    /**
     * @Route("/admin-panel/", name="adminindex")
     */
     public function adminIndexPageAction(Request $request)
@@ -37,10 +54,5 @@ class DefaultController extends Controller
         // replace this example code with whatever you need
         return $this->render('admin/index.html.twig');
     }
-
-
-
-
-
 
 }
