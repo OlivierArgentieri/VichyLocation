@@ -11,22 +11,18 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/{id}/showFlat", name="showflat")
+     * @Route("/{id}/show_flat", name="showflat")
      */
     public function showFlatAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
-        $flats = $em->getRepository(Flat::class)->findAll();
+        $id = $request->query->get('id');
+        $flat = $em->getRepository(Flat::class)->find( 1);
 
-        $images = $em->getRepository(Image::class)->findAll();
         return $this->render('default/show_flat.html.twig', array(
-            'flats' => $flats,
-            'images' => $images,
+            'flat' => $flat
         ));
-
-
         // replace this example code with whatever you need
-
     }
 
     /**
