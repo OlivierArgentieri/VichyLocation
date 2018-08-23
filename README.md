@@ -6,13 +6,13 @@ Projet de gestion de location d'appartement
 Description
 --------------
 
-Création d'une plateforme avec Admin pour ajout, suivi des locations.
+Création d'une plateforme avec Admin pour ajout, suivi des locations.  
 
 Projet développé en Symfony3
 
 ## Créé avec 
 
-* [Bootstrap v4](https://getbootstrap.com/) - Open source toolkit for developing with HTML, CSS, and JS.
-* [jQuery](https://jquery.com/) - A fast, small, and feature-rich JavaScript library. 
-* [FontAwesome v5](https://fontawesome.com/) - Vector icons and social logos.
-* [Symfony 3](http://symfony.com/what-is-symfony) - The leading PHP framework to create websites and web applications.
+* [Bootstrap v4](https://getbootstrap.com/) - Toolkit open source pour le développement avec HTML, CSS et JS.
+* [jQuery](https://jquery.com/) - jQuery est une bibliothèque JavaScript libre et multiplateforme.
+* [FontAwesome v5](https://fontawesome.com/) - Icônes vectorielles et logos sociaux.
+* [Symfony 3](http://symfony.com/what-is-symfony) - Le framework PHP leader pour créer des sites Web et des applications Web.
